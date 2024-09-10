@@ -32,4 +32,8 @@ const getLatestProducts = (): Promise<
   return axiosClient.get('/products?populate=*');
 };
 
-export { getLatestProducts };
+const getProductById = (id: Number) => {
+  return axiosClient.get(`/products/${id}?populate=*`);
+};
+
+export { getLatestProducts, getProductById };
