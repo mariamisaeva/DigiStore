@@ -22,6 +22,7 @@ function DetailsPage({ params }: any) {
       <SmallNavbar />
       <div>
         <div></div>
+        <div></div>
       </div>
 
       <h1>Product Id: {params?.productId}</h1>
