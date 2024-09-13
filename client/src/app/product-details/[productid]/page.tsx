@@ -21,7 +21,7 @@ function DetailsPage({ params }: any) {
     <div className="text-black px-10 py-8 md:px-28">
       <SmallNavbar />
       <div>
-        <div></div></di>
+        <div></div>
       </div>
 
       <h1>Product Id: {params?.productId}</h1>
