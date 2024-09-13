@@ -1,7 +1,11 @@
 import React from 'react';
 
 function ProductInfo() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>ProductInfo</h1>
+    </div>
+  );
 }
 
 export default ProductInfo;
