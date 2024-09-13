@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import { getProductById } from '../../_utils/productsAPI';
+import SmallNavbar from '../../_Components/SmallNavbar';
 
 function DetailsPage({ params }: any) {
   useEffect(() => {
@@ -18,7 +19,7 @@ function DetailsPage({ params }: any) {
 
   return (
     <div className="text-black">
-      Hello in Details
+      <SmallNavbar />
       <h1>Product Id: {params?.productId}</h1>
     </div>
   );
