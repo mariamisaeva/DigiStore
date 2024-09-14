@@ -1,6 +1,6 @@
 import React from 'react';
-
-function ProductImage() {
+import { Product } from '../../../_utils/productsAPI';
+function ProductImage({ product }: { product: Product }) {
   return <div>ProductBanner</div>;
 }
 
