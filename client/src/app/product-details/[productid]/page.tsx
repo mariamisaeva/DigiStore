@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { getProductById } from '../../_utils/productsAPI';
 import SmallNavbar from '../../_Components/SmallNavbar';
 import ProductImage from './_components/ProductImage';
+import ProductInfo from './_components/ProductInfo';
 
 function DetailsPage({ params }: any) {
   useEffect(() => {
