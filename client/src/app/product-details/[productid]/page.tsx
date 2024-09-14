@@ -1,12 +1,12 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { getProductById } from '../../_utils/productsAPI';
+import { getProductById, Product } from '../../_utils/productsAPI';
 import SmallNavbar from '../../_Components/SmallNavbar';
 import ProductImage from './_components/ProductImage';
 import ProductInfo from './_components/ProductInfo';
 
 function DetailsPage({ params }: any) {
-  const [productDetails, setProductDetails] = useState({});
+  const [productDetails, setProductDetails] = useState<Product | null>(null);
 
   useEffect(() => {
     async function fetchProductById() {
@@ -27,7 +27,11 @@ function DetailsPage({ params }: any) {
       <SmallNavbar />
       <div className="flex md:flex-row flex-col mt-10 justify-around">
         {/*add marginTop flex(bigScreen) flex-col(smallScreen) justify around for space arounnd them*/}
-        <ProductImage product={productDetails} />
+        {productDetails ? (
+          <ProductImage product={productDetails} />
+        ) : (
+          <h4>Loading ... </h4>
+        )}
         <ProductInfo />
       </div>
 
