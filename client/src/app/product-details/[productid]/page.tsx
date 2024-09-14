@@ -22,17 +22,13 @@ function DetailsPage({ params }: any) {
   return (
     <div className="text-black px-10 py-8 md:px-28">
       <SmallNavbar />
-      <div className="flex mt-10 flex-col md:flex:row">
+      <div className="flex md:flex-row flex-col mt-10">
         {/*add marginTop flex(bigScreen) flex-col(smallScreen) */}
-        <div>
-          <ProductImage />
-        </div>
-        <div>
-          <ProductInfo />
-        </div>
+        <ProductImage />
+        <ProductInfo />
       </div>
 
-      <h1>Product Id: {params?.productId}</h1>
+      {/* <h1>Product Id: {params?.productId}</h1> */}
     </div>
   );
 }
