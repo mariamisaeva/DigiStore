@@ -36,4 +36,10 @@ const getProductById = (id: Number) => {
   return axiosClient.get(`/products/${id}?populate=*`);
 };
 
-export { getLatestProducts, getProductById };
+const getProductbyCategory = (category: string) => {
+  return axiosClient.get(
+    `products?filters[category][$eq]=${category}?populate=*`,
+  );
+};
+
+export { getLatestProducts, getProductById, getProductbyCategory };
