@@ -25,7 +25,9 @@ function DetailsPage({ params }: any) {
         <div>
           <ProductImage />
         </div>
-        <div></div>
+        <div>
+          <ProductInfo />
+        </div>
       </div>
 
       <h1>Product Id: {params?.productId}</h1>
