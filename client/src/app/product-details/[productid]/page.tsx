@@ -1,9 +1,15 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { getProductById, Product } from '../../_utils/productsAPI';
+import {
+  getProductById,
+  Product,
+  getProductByCategory,
+  StrapiResponse,
+} from '../../_utils/productsAPI';
 import SmallNavbar from '../../_Components/SmallNavbar';
 import ProductImage from './_components/ProductImage';
 import ProductInfo from './_components/ProductInfo';
+import { AxiosResponse } from 'axios';
 
 function DetailsPage({ params }: any) {
   const [productDetails, setProductDetails] = useState<Product | null>(null);
@@ -12,8 +18,9 @@ function DetailsPage({ params }: any) {
     async function fetchProductById() {
       try {
         const res = await getProductById(params?.productId);
-        console.log(res.data.data);
+        // console.log(res.data.data);
         setProductDetails(res.data.data);
+        // getProductByCategory(res.data.data); //func call
       } catch (err) {
         console.log(err);
       }
@@ -21,6 +28,23 @@ function DetailsPage({ params }: any) {
 
     fetchProductById();
   }, [params?.productId]);
+
+  useEffect(() => {
+    if (productDetails) {
+      fetchProductByCategory(productDetails);
+    }
+  }, [productDetails]);
+
+  async function fetchProductByCategory(product: Product) {
+    try {
+      const res: AxiosResponse<StrapiResponse<Product[]>> =
+        await getProductByCategory(product?.attributes?.category);
+
+      //   console.log('Here is the Response: ', res?.data?.data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <div className="text-black px-10 py-8 md:px-28">

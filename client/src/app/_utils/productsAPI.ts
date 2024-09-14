@@ -36,10 +36,10 @@ const getProductById = (id: Number) => {
   return axiosClient.get(`/products/${id}?populate=*`);
 };
 
-const getProductbyCategory = (category: string) => {
+const getProductByCategory = (category: string) => {
   return axiosClient.get(
-    `products?filters[category][$eq]=${category}?populate=*`,
+    `/products?filters[category][$eq]=${category}&populate=*`,
   );
 };
 
-export { getLatestProducts, getProductById, getProductbyCategory };
+export { getLatestProducts, getProductById, getProductByCategory };
