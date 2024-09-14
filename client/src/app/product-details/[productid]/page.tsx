@@ -22,7 +22,8 @@ function DetailsPage({ params }: any) {
   return (
     <div className="text-black px-10 py-8 md:px-28">
       <SmallNavbar />
-      <div>
+      <div className="mt-10">
+        {/*add marginTop */}
         <div>
           <ProductImage />
         </div>
