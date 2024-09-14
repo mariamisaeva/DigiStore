@@ -25,7 +25,7 @@ function DetailsPage({ params }: any) {
   return (
     <div className="text-black px-10 py-8 md:px-28">
       <SmallNavbar />
-      <div className="grid grid-cols-1 sm:grid-cols-2 flex-col mt-10 justify-around">
+      <div className="grid grid-cols-1 sm:grid-cols-2 flex-col mt-10 justify-around gap-5 sm:gap:0">
         {productDetails ? (
           <ProductImage product={productDetails} />
         ) : (
