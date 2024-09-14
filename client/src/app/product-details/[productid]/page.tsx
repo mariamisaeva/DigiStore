@@ -22,8 +22,8 @@ function DetailsPage({ params }: any) {
   return (
     <div className="text-black px-10 py-8 md:px-28">
       <SmallNavbar />
-      <div className="mt-10">
-        {/*add marginTop */}
+      <div className="flex mt-10 flex-col md:flex:row">
+        {/*add marginTop flex(bigScreen) flex-col(smallScreen) */}
         <div>
           <ProductImage />
         </div>
