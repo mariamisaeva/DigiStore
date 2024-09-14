@@ -30,7 +30,7 @@ function DetailsPage({ params }: any) {
         {productDetails ? (
           <ProductImage product={productDetails} />
         ) : (
-          <h4>Loading ... </h4>
+          <h4>Loading Image ... </h4>
         )}
         <ProductInfo />
       </div>
