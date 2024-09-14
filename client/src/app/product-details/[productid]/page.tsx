@@ -25,8 +25,7 @@ function DetailsPage({ params }: any) {
   return (
     <div className="text-black px-10 py-8 md:px-28">
       <SmallNavbar />
-      <div className="flex md:flex-row flex-col mt-10 justify-around">
-        {/*add marginTop flex(bigScreen) flex-col(smallScreen) justify around for space arounnd them*/}
+      <div className="grid grid-cols-1 sm:grid-cols-2 flex-col mt-10 justify-around">
         {productDetails ? (
           <ProductImage product={productDetails} />
         ) : (

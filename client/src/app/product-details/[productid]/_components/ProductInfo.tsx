@@ -8,7 +8,7 @@ function ProductInfo({ product }: { product: Product }) {
       <h2 className={'text-[15px] text-gray-400'}>
         {product?.attributes?.category}
       </h2>
-      <h2>
+      <h2 className={'text-[15px] mt-5'}>
         {Array.isArray(product?.attributes?.description) &&
           product?.attributes?.description
             ?.map((descItem: any) =>
