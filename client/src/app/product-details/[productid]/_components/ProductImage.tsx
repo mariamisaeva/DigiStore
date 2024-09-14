@@ -7,8 +7,9 @@ function ProductImage({ product }: { product: Product }) {
       <Image
         src={product?.attributes?.image?.data?.attributes?.url}
         alt={product?.attributes?.title}
-        width={300}
-        height={300}
+        width={400}
+        height={400}
+        className="rounded-3xl "
       />
     </div>
   );

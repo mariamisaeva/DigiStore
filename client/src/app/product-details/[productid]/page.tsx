@@ -32,7 +32,7 @@ function DetailsPage({ params }: any) {
         ) : (
           <h4>Loading Image ... </h4>
         )}
-        <ProductInfo />
+        {productDetails && <ProductInfo product={productDetails} />}
       </div>
 
       {/* <h1>Product Id: {params?.productId}</h1> */}
