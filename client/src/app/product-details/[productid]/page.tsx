@@ -14,6 +14,10 @@ import { AxiosResponse } from 'axios';
 function DetailsPage({ params }: any) {
   const [productDetails, setProductDetails] = useState<Product | null>(null);
 
+  const [similarProductList, setSimilarProductList] = useState<
+    Product[] | null
+  >(null);
+
   useEffect(() => {
     async function fetchProductById() {
       try {
@@ -39,8 +43,8 @@ function DetailsPage({ params }: any) {
     try {
       const res: AxiosResponse<StrapiResponse<Product[]>> =
         await getProductByCategory(product?.attributes?.category);
-
       //   console.log('Here is the Response: ', res?.data?.data);
+      setSimilarProductList(res?.data?.data);
     } catch (err) {
       console.log(err);
     }
