@@ -11,6 +11,8 @@ function ProductImage({ product }: { product: Product }) {
         height={400}
         className="rounded-3xl "
       />
+
+      <div className="w-[400px] h-[225px] bg-slate-200 rounded-lg animate-pulse"></div>
     </div>
   );
 }
