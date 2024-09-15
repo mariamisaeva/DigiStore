@@ -58,11 +58,7 @@ function DetailsPage({ params }: any) {
       <SmallNavbar path={path} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 flex-col mt-10 justify-around gap-5 sm:gap:0">
-        {productDetails ? (
-          <ProductImage product={productDetails} />
-        ) : (
-          <h4>Loading Image ... </h4>
-        )}
+        {productDetails && <ProductImage product={productDetails} />}
         {productDetails && <ProductInfo product={productDetails} />}
       </div>
       {/* <h1>Product Id: {params?.productId}</h1> */}
