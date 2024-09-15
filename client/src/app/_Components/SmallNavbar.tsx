@@ -76,7 +76,7 @@ function SmallNavbar({ path }: smallNavbar) {
           <li>
             <a href="#" className="block transition hover:text-gray-700">
               {' '}
-              Plain Tee{' '}
+              {path?.split('/')[2]}
             </a>
           </li>
         </ol>
