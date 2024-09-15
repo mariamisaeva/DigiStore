@@ -11,8 +11,10 @@ import ProductImage from './_components/ProductImage';
 import ProductInfo from './_components/ProductInfo';
 import { AxiosResponse } from 'axios';
 import ProductList from '../../_Components/ProductList';
+import { usePathname } from 'next/navigation';
 
 function DetailsPage({ params }: any) {
+  const path: any = usePathname();
   const [productDetails, setProductDetails] = useState<Product | null>(null);
 
   const [similarProductList, setSimilarProductList] = useState<
@@ -53,7 +55,7 @@ function DetailsPage({ params }: any) {
 
   return (
     <div className="text-black px-10 py-8 md:px-28">
-      <SmallNavbar />
+      <SmallNavbar path={path} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 flex-col mt-10 justify-around gap-5 sm:gap:0">
         {productDetails ? (

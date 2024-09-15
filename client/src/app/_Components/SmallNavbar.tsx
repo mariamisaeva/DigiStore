@@ -1,6 +1,10 @@
 import React from 'react';
 
-function SmallNavbar() {
+interface smallNavbar {
+  path: string;
+}
+
+function SmallNavbar({ path }: smallNavbar) {
   return (
     <div>
       {/*
@@ -50,7 +54,7 @@ function SmallNavbar() {
           <li>
             <a href="#" className="block transition hover:text-gray-700">
               {' '}
-              Shirts{' '}
+              {path?.split('/')[1]}
             </a>
           </li>
 
