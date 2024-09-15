@@ -53,6 +53,7 @@ function DetailsPage({ params }: any) {
   return (
     <div className="text-black px-10 py-8 md:px-28">
       <SmallNavbar />
+
       <div className="grid grid-cols-1 sm:grid-cols-2 flex-col mt-10 justify-around gap-5 sm:gap:0">
         {productDetails ? (
           <ProductImage product={productDetails} />
@@ -61,8 +62,13 @@ function DetailsPage({ params }: any) {
         )}
         {productDetails && <ProductInfo product={productDetails} />}
       </div>
-
       {/* <h1>Product Id: {params?.productId}</h1> */}
+
+      <div>
+        <h2 className="text-3xl font-bold text-center mt-10">
+          Similar Products
+        </h2>
+      </div>
     </div>
   );
 }
