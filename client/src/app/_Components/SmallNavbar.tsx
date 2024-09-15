@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface smallNavbar {
   path: string;
@@ -7,16 +8,10 @@ interface smallNavbar {
 function SmallNavbar({ path }: smallNavbar) {
   return (
     <div>
-      {/*
-  Heads up! 👋
-
-  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
-*/}
-
       <nav aria-label="Breadcrumb">
         <ol className="flex items-center gap-1 text-sm text-gray-600">
           <li>
-            <a href="#" className="block transition hover:text-gray-700">
+            <Link href="/" className="block transition hover:text-gray-700">
               <span className="sr-only"> Home </span>
 
               <svg
@@ -33,7 +28,7 @@ function SmallNavbar({ path }: smallNavbar) {
                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                 />
               </svg>
-            </a>
+            </Link>
           </li>
 
           <li className="rtl:rotate-180">
