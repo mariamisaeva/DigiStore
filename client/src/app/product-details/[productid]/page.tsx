@@ -66,7 +66,7 @@ function DetailsPage({ params }: any) {
       {/* <h1>Product Id: {params?.productId}</h1> */}
 
       <div>
-        <h2 className="text-xl font-bold text-center mt-24">
+        <h2 className="text-xl font-bold text-center mt-24 mb-5">
           Similar Products
         </h2>
         <ProductList productList={similarProductList || []} />

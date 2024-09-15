@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { TbCategoryFilled } from 'react-icons/tb';
+import Link from 'next/link';
+
 export interface ProductCardProps {
   product: {
     id: number;
@@ -20,7 +22,10 @@ export interface ProductCardProps {
 }
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="p-1 hover:border hover:shadow-md rounded-lg border-blue-200">
+    <Link
+      href={`/product-details/${product?.id}`}
+      className="p-1 hover:border hover:shadow-md rounded-lg border-blue-200"
+    >
       {/* <div key={product.id}>{product?.attributes.title}</div> */}
       <Image
         src={product?.attributes?.image?.data?.attributes?.url}
@@ -47,6 +52,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           ${product?.attributes?.price}
         </h2>
       </div>
-    </div>
+    </Link>
   );
 }
