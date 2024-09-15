@@ -10,6 +10,7 @@ import SmallNavbar from '../../_Components/SmallNavbar';
 import ProductImage from './_components/ProductImage';
 import ProductInfo from './_components/ProductInfo';
 import { AxiosResponse } from 'axios';
+import ProductList from '../../_Components/ProductList';
 
 function DetailsPage({ params }: any) {
   const [productDetails, setProductDetails] = useState<Product | null>(null);
@@ -65,9 +66,10 @@ function DetailsPage({ params }: any) {
       {/* <h1>Product Id: {params?.productId}</h1> */}
 
       <div>
-        <h2 className="text-3xl font-bold text-center mt-10">
+        <h2 className="text-xl font-bold text-center mt-24">
           Similar Products
         </h2>
+        <ProductList productList={similarProductList || []} />
       </div>
     </div>
   );
