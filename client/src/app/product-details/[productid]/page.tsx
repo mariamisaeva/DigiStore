@@ -78,4 +78,4 @@ function DetailsPage({ params }: any) {
 }
 
 export default DetailsPage;
-/////////
+////////
