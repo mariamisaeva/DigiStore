@@ -3,7 +3,13 @@ import { Inter } from 'next/font/google';
 import Header from './_Components/Header';
 import Footer from './_Components/Footer';
 import './globals.css';
-import { ClerkProvider } from '@clerk/nextjs';
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from '@clerk/nextjs';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,9 +26,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+        <ClerkProvider>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+            <Header />
+            {children}
+            <Footer />
+          </SignedIn>
+        </ClerkProvider>
       </body>
     </html>
   );
