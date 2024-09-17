@@ -3,13 +3,7 @@ import { Inter } from 'next/font/google';
 import Header from './_Components/Header';
 import Footer from './_Components/Footer';
 import './globals.css';
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,26 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    //   <html lang="en">
-    //     <body className={inter.className}>
-    //       <Header />
-    //       {children}
-    //       <Footer />
-    //     </body>
-    //   </html>
-
-    <ClerkProvider>
-      <html lang="en">
-        <body>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
   );
 }
