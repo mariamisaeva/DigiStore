@@ -10,12 +10,13 @@
 //     '/(api|trpc)(.*)',
 //   ],
 // };
-import { authMiddleware } from '@clerk/nextjs';
 
-export default authMiddleware({
-  cookieless: true, // Ensures cookieless session handling
-});
+// import { authMiddleware } from '@clerk/nextjs';
 
-export const config = {
-  matcher: ['/((?!api|static|.*\\..*|_next).*)', '/'],
-};
+// export default authMiddleware({
+//   cookieless: true, // Ensures cookieless session handling
+// });
+
+// export const config = {
+//   matcher: ['/((?!api|static|.*\\..*|_next).*)', '/'],
+// };
