@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
   return (
-    <div className="from-neutral-950">Hero Section was here</div>
+    <div className="">Hero Section was here</div>
     //     <div>
     //       {/*
     //   Heads up! 👋
