@@ -16,5 +16,3 @@ export const config = {
     '/(api|trpc)(.*)',
   ],
 };
-
-//     // Skip Next.js internals and all static files, unless found in search params
