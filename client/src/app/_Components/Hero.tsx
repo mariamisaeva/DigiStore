@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
   return (
-    <div clas>Hero Section was here</div>
+    <div>Hero</div>
     //     <div>
     //       {/*
     //   Heads up! 👋
