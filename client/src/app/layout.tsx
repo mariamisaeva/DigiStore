@@ -27,13 +27,15 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          {/* <ClerkProvider>
-          <SignedOut>
+          {/* <SignedOut>
             <SignInButton />
           </SignedOut>
+          <SignedIn>
+            <UserButton /> */}
           <Header />
           {children}
           <Footer />
+          {/* </SignedIn> */}
         </body>
       </html>
     </ClerkProvider>
