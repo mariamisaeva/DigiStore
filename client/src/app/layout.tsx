@@ -24,7 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+      isCookieless={process.env.NEXT_PUBLIC_CLERK_COOKIELESS === 'true'}
+      }}
+    >
       <html lang="en">
         <body className={inter.className}>
           {/* <Header />
