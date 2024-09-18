@@ -24,20 +24,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {/* <ClerkProvider>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          {/* <ClerkProvider>
           <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
             <UserButton /> */}
-        <Header />
-        {children}
-        <Footer />
-        {/* </SignedIn>
+          <Header />
+          {children}
+          <Footer />
+          {/* </SignedIn>
         </ClerkProvider> */}
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
