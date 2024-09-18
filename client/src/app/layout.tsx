@@ -31,13 +31,9 @@ export default function RootLayout({
           <SignedOut>
             <SignInButton />
           </SignedOut>
-          <SignedIn>
-            <UserButton /> */}
           <Header />
           {children}
           <Footer />
-          {/* </SignedIn>
-        </ClerkProvider> */}
         </body>
       </html>
     </ClerkProvider>
