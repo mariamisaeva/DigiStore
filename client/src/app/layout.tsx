@@ -29,8 +29,8 @@ export default function RootLayout({
     >
       <html lang="en">
         <body className={inter.className}>
-          {/* <Header />
-          <SignedOut>
+          <Header />
+          {/* <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
