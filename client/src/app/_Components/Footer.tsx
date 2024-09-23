@@ -1,7 +1,10 @@
+'use client';
 import React from 'react';
+import { useUser } from '@clerk/nextjs';
 
 function Footer() {
-  return <div className="text-black">FOOTER</div>;
+  const { user } = useUser();
+  return user && <div className="text-black">FOOTER</div>;
 }
 
 export default Footer;
