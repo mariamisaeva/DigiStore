@@ -41,21 +41,21 @@ export default function Page() {
             
           </div>*/}
           <SignIn
-            // appearance={{
-            //   variables: {
-            //     colorPrimary: '#1D4ED8',
-            //     colorText: '#374151',
-            //     borderRadius: '10px',
-            //     fontSize: '18px',
-            //   },
-              //   elements: {
-              // root: ' w-[00px] h-[600px]',
-              // card: 'shadow-xl w-[400px] h-[600px] bg-gray-100', // Increased width and height
-              // input: 'p-4 text-lg border-gray-300', // Input size and padding
-              // buttonPrimary:
-              //   'text-lg py-2 px-4 w-full bg-blue-600 text-white rounded-lg', // Button
-              //   },
-            }}
+          // appearance={{
+          //   variables: {
+          //     colorPrimary: '#1D4ED8',
+          //     colorText: '#374151',
+          //     borderRadius: '10px',
+          //     fontSize: '18px',
+          //   },
+          //   elements: {
+          // root: ' w-[00px] h-[600px]',
+          // card: 'shadow-xl w-[400px] h-[600px] bg-gray-100', // Increased width and height
+          // input: 'p-4 text-lg border-gray-300', // Input size and padding
+          // buttonPrimary:
+          //   'text-lg py-2 px-4 w-full bg-blue-600 text-white rounded-lg', // Button
+          //   },
+          // }}
           />
         </main>
       </div>
