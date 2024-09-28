@@ -43,7 +43,7 @@ export default function Page() {
           <SignIn
             appearance={{
               variables: {
-                colorPrimary: '#1D4ED8', // Customize primary color
+                colorPrimary: '#1D4ED8',
                 colorText: '#374151',
                 borderRadius: '10px',
               },
