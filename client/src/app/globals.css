@@ -32,3 +32,8 @@ body {
     text-wrap: balance;
   }
 }
+
+/*SignIn*/
+.cl-cardBox cl-signIn-start {
+  background-color: red;
+}
