@@ -2,7 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { useUser } from '@clerk/nextjs';
-import Link from 'next/link';
 
 function Header() {
   const { user } = useUser();
@@ -85,13 +84,12 @@ function Header() {
                   Login
                 </a>
 
-                <Link
-                  href="/sign-up"
+                <a
                   className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-blue-700 transition hover:text-blue-600/75 sm:block"
                   href="#"
                 >
                   Register
-                </Link>
+                </a>
               </div>
 
               <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
