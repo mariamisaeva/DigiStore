@@ -38,7 +38,7 @@ body {
   background-color: red;
 }
 
-.cl-card #cl-signIn-start {
+div .cl-card .cl-signIn-start {
   width: 700px;
   height: 500px;
   background-color: #ffffff;
