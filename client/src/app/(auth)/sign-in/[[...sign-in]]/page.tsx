@@ -50,7 +50,7 @@ export default function Page() {
               },
               elements: {
                 card: 'shadow-xl p-6 w-[500px] h-[600px] bg-gray-100', // Increased width and height
-                input: 'p-4 text-lg border-gray-300', // Input size and padding
+                // input: 'p-4 text-lg border-gray-300', // Input size and padding
                 // buttonPrimary:
                 //   'text-lg py-2 px-4 w-full bg-blue-600 text-white rounded-lg', // Button
               },
