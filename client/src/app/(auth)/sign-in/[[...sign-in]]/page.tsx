@@ -45,7 +45,7 @@ export default function Page() {
               variables: {
                 colorPrimary: '#1D4ED8', // Customize primary color
                 colorText: '#374151', // Customize text color
-                borderRadius: '20px', // Adjust border-radius for rounded edges
+                borderRadius: '10px', // Adjust border-radius for rounded edges
               },
             }}
           />
