@@ -41,13 +41,13 @@ export default function Page() {
             
           </div>*/}
           <SignIn
-            appearance={{
-              variables: {
-                colorPrimary: '#1D4ED8',
-                colorText: '#374151',
-                borderRadius: '10px',
-                fontSize: '18px',
-              },
+            // appearance={{
+            //   variables: {
+            //     colorPrimary: '#1D4ED8',
+            //     colorText: '#374151',
+            //     borderRadius: '10px',
+            //     fontSize: '18px',
+            //   },
               //   elements: {
               // root: ' w-[00px] h-[600px]',
               // card: 'shadow-xl w-[400px] h-[600px] bg-gray-100', // Increased width and height
