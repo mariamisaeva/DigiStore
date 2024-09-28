@@ -44,7 +44,7 @@ export default function Page() {
             appearance={{
               variables: {
                 colorPrimary: '#1D4ED8', // Customize primary color
-                colorText: '#374151', // Customize text color
+                colorText: '#374151',
                 borderRadius: '10px',
               },
             }}
