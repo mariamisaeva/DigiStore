@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { useUser } from '@clerk/nextjs';
+import { UserButton, useUser } from '@clerk/nextjs';
 
 function Header() {
   const { user } = useUser();
@@ -93,7 +93,9 @@ function Header() {
                   </a>
                 </div>
               ) : (
-                <div></div>
+                <div>
+                  <UserButton />
+                </div>
               )}
 
               <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
