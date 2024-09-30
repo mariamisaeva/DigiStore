@@ -94,6 +94,8 @@ function Header() {
                 </div>
               ) : (
                 <div>
+                  <RiShoppingCartLine />
+
                   <UserButton />
                 </div>
               )}
