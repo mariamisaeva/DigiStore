@@ -94,9 +94,9 @@ function Header() {
                   </a>
                 </div>
               ) : (
-                <div className="flex gap-5 item-center bg-yellow-300">
+                <div className="flex gap-5 item-center">
                   <h2>
-                    <TiShoppingCart />
+                    <TiShoppingCart color="black" /> (0)
                   </h2>
                   <UserButton />
                 </div>
