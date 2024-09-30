@@ -91,7 +91,6 @@ function Header() {
                 >
                   Register
                 </a>
-                : <div></div>
             }
 
               </div>
