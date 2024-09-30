@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { UserButton, useUser } from '@clerk/nextjs';
-import { RiShoppingCartLine } from 'react-icons/ri';
+import { TiShoppingCart } from 'react-icons/ti';
 
 function Header() {
   const { user } = useUser();
@@ -94,8 +94,10 @@ function Header() {
                   </a>
                 </div>
               ) : (
-                <div>
-                  <RiShoppingCartLine />
+                <div className="flex gap-5 item-center bg-yellow-300">
+                  <h2>
+                    <TiShoppingCart />
+                  </h2>
                   <UserButton />
                 </div>
               )}
