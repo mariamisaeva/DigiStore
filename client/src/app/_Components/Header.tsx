@@ -95,13 +95,12 @@ function Header() {
                 </div>
               ) : (
                 <div className="flex gap-5 items-center">
-                  <h2>
+                  <h2 className="flex gap-2 cursor-pointer">
                     <RiShoppingCartLine
                       color="black"
                       style={{
                         padding: 0,
                         fontSize: '20px',
-                        marginTop: '22px',
                       }}
                     />
                     (0)
