@@ -6,6 +6,7 @@ import { RiShoppingCartLine } from 'react-icons/ri';
 
 function Header() {
   const { user } = useUser();
+  //   console.log(window.location.href);
   return (
     user && (
       <header className="bg-white">
