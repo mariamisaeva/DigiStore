@@ -87,14 +87,14 @@ function Header() {
                 <div className="sm:flex sm:gap-4">
                   <a
                     className="block rounded-md bg-blue-700 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#6EACDA]"
-                    href="#"
+                    href="/sign-in"
                   >
                     Login
                   </a>
 
                   <a
                     className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-blue-700 transition hover:text-blue-600/75 sm:block"
-                    href="#"
+                    href="/sign-up"
                   >
                     Register
                   </a>

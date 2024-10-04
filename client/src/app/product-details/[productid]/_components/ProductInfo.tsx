@@ -4,8 +4,20 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { BsCloudCheck } from 'react-icons/bs';
 import { IoAlertCircleOutline } from 'react-icons/io5';
 import SkeletonProductInfo from './SkeletonProductInfo';
+import { useUser } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 
 function ProductInfo({ product }: { product: Product }) {
+  const { user } = useUser();
+  const router = useRouter();
+  const handleAddToCart = () => {
+    console.log('add to cart');
+    if (!user) {
+      router.push('/sign-in');
+    } else {
+      //define the logic of adding the product to the cart
+    }
+  };
   return (
     <div>
       {product?.id ? (
@@ -39,7 +51,10 @@ function ProductInfo({ product }: { product: Product }) {
             ${product?.attributes?.price}
           </h2>
 
-          <button className="flex gap-2 hover:bg-blue-400 bg-blue-600 text-white font-bold px-4 py-2 mt-5 rounded-lg">
+          <button
+            onClick={() => handleAddToCart()}
+            className="flex gap-2 hover:bg-blue-400 bg-blue-600 text-white font-bold px-4 py-2 mt-5 rounded-lg"
+          >
             <HiOutlineShoppingCart className="mt-1" />
             Add to Cart
           </button>
