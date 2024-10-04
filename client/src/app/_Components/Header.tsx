@@ -95,7 +95,7 @@ function Header() {
                 </div>
               ) : (
                 <div className="flex gap-5 items-center">
-                  <h2 className="flex gap-2 cursor-pointer">
+                  <h2 color="black" className="flex gap-2 cursor-pointer">
                     <RiShoppingCartLine
                       color="black"
                       style={{
