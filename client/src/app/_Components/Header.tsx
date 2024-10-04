@@ -103,7 +103,7 @@ function Header() {
                         fontSize: '20px',
                         marginTop: '22px',
                       }}
-                    />{' '}
+                    />
                     (0)
                   </h2>
                   <UserButton />s
