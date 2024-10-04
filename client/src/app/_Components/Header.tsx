@@ -98,7 +98,11 @@ function Header() {
                   <h2>
                     <RiShoppingCartLine
                       color="black"
-                      style={{ paddingTop: '3px' }}
+                      style={{
+                        padding: 0,
+                        fontSize: '20px',
+                        marginTop: '20px',
+                      }}
                     />{' '}
                     (0)
                   </h2>
