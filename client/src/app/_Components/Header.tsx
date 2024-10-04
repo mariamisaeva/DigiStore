@@ -96,9 +96,9 @@ function Header() {
               ) : (
                 <div className="flex gap-5 item-center">
                   <h2>
-                    <RiShoppingCartLine color="black" /> (0)
+                    <RiShoppingCartLine color="black" style={{padding-top: '3px'}} /> (0)
                   </h2>
-                  <UserButton />
+                  <UserButton />s
                 </div>
               )}
 
