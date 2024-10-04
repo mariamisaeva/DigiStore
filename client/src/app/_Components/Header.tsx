@@ -3,17 +3,32 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { RiShoppingCartLine } from 'react-icons/ri';
+import { usePathname, useRouter } from 'next/navigation';
 
 function Header() {
   const { user } = useUser();
-  //   console.log(window.location.href);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const pathname = usePathname();
+
+  const [showHeader, setShowHeader] = useState(true);
+
   useEffect(() => {
-    setLoggedIn(window.location.href.toString().includes('sign-in'));
-  }, []);
+    // const path = typeof window !== 'undefined' ? window.location.pathname : '';
+    const hideHeaderRoutes = ['/sign-in', '/sign-up'];
+
+    const shouldHideHeader = hideHeaderRoutes.some((route) =>
+      pathname.includes(route),
+    );
+
+    setShowHeader(!shouldHideHeader);
+  }, [pathname]);
+  //   console.log(window.location.href);
+  //   const [loggedIn, setLoggedIn] = useState(false);
+  //   useEffect(() => {
+  //     setLoggedIn(window.location.href.toString().includes('sign-in'));
+  //   }, []);
 
   return (
-    !loggedIn && (
+    showHeader && (
       <header className="bg-white">
         <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
           {/*shadow-md*/}
