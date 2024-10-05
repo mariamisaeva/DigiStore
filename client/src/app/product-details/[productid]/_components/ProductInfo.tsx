@@ -24,6 +24,8 @@ function ProductInfo({ product }: { product: Product }) {
       };
       console.log('data: ', data);
       try {
+        const res = cartAPI.addToCart(data);
+        console.log('Response: ', res);
       } catch (err) {
         console.error('Error adding to cart: ', err);
       }
