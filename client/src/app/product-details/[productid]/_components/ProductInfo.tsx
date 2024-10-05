@@ -6,6 +6,7 @@ import { IoAlertCircleOutline } from 'react-icons/io5';
 import SkeletonProductInfo from './SkeletonProductInfo';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
+import cartAPI from '../../../_utils/cartAPI';
 
 function ProductInfo({ product }: { product: Product }) {
   const { user } = useUser();
@@ -15,7 +16,22 @@ function ProductInfo({ product }: { product: Product }) {
     if (!user) {
       router.push('/sign-in');
     } else {
-      //define the logic of adding the product to the cart
+      //the logic of adding the product to the cart
+      const data = {
+        username: user.fullName,
+        email: user.primaryEmailAddress?.emailAddress,
+        product: [product?.id],
+      };
+      console.log('data: ', data);
+
+      //   cartAPI
+      //     .addToCart(data)
+      //     .then((res) => {
+      //       console.log('res: ', res);
+      //     })
+      //     .catch((err) => {
+      //       console.log('err: ', err);
+      //     });
     }
   };
   return (
