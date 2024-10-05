@@ -15,9 +15,6 @@ export interface StrapiResponse<T> {
 const addToCart = (
   payload: cartPayload,
 ): Promise<AxiosResponse<StrapiResponse<cartPayload>>> => {
-  const token = axiosClient.defaults.headers['Authorization'];
-  console.log('Authorization Header (Bearer Token):', token);
-
   return axiosClient.post('/carts', payload);
 };
 

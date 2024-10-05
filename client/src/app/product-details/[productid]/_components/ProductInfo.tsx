@@ -5,7 +5,7 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { BsCloudCheck } from 'react-icons/bs';
 import { IoAlertCircleOutline } from 'react-icons/io5';
 import SkeletonProductInfo from './SkeletonProductInfo';
-import { useUser, useSession } from '@clerk/nextjs';
+import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 // import cartAPI from '../../../_utils/cartAPI';
 import { addToCart } from '../../../_utils/cartAPI';
