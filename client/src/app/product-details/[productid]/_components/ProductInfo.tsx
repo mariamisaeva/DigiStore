@@ -23,7 +23,10 @@ function ProductInfo({ product }: { product: Product }) {
         product: [product?.id],
       };
       console.log('data: ', data);
-
+      try {
+      } catch (err) {
+        console.error('Error adding to cart: ', err);
+      }
       //   cartAPI
       //     .addToCart(data)
       //     .then((res) => {
