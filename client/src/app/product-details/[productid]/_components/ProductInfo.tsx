@@ -43,14 +43,16 @@ function ProductInfo({ product }: { product: Product }) {
 
       try {
         const res = await addToCart(bodyData);
-        console.log('Response: ', res);
+
+        const responseData = res.data as any;
+        // console.log('Response: ', responseData.data.id);
 
         setCart((prevCart) => [
           ...cart,
           {
-            id: res?.data?.data?.id,
+            id: responseData.data.id,
+            product,
           },
-          product,
         ]);
       } catch (err) {
         console.log('Error adding to cart: ', err);
