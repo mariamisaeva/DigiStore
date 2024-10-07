@@ -1,15 +1,18 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { usePathname, useRouter } from 'next/navigation';
+import { CartContext } from '../_context/cartContext';
 
 function Header() {
   const { user } = useUser();
   const pathname = usePathname();
 
   const [showHeader, setShowHeader] = useState(true);
+
+  const { cart, setCart } = useContext(CartContext) || {};
 
   useEffect(() => {
     // const path = typeof window !== 'undefined' ? window.location.pathname : '';
@@ -128,7 +131,7 @@ function Header() {
                         fontSize: '22px',
                       }}
                     />
-                    (0)
+                    {cart?.length}
                   </h2>
                   <UserButton />s
                 </div>
