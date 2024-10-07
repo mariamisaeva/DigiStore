@@ -61,7 +61,6 @@ function ProductInfo({ product }: { product: Product }) {
       //   cartAPI
       //     .addToCart(data)
       //     .then((res) => {
-      //       console.log('res: ', res);
     }
   };
   return (
