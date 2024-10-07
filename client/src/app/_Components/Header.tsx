@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { usePathname, useRouter } from 'next/navigation';
-import { CartContext } from '../_context/cartContext';
+import { useCart } from '../_context/cartContext';
 
 function Header() {
   const { user } = useUser();
@@ -12,7 +12,7 @@ function Header() {
 
   const [showHeader, setShowHeader] = useState(true);
 
-  const { cart, setCart } = useContext(CartContext) || {};
+  const { cart, setCart } = useCart();
 
   useEffect(() => {
     // const path = typeof window !== 'undefined' ? window.location.pathname : '';

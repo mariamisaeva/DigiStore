@@ -9,13 +9,13 @@ import { useUser, useSession } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 // import cartAPI from '../../../_utils/cartAPI';
 import { addToCart } from '../../../_utils/cartAPI';
-import { CartContext } from '../../../_context/cartContext';
+import { useCart } from '../../../_context/cartContext';
 
 function ProductInfo({ product }: { product: Product }) {
   const { user } = useUser();
   const router = useRouter();
 
-  const { cart, setCart } = useContext(CartContext) || {};
+  const { cart, setCart } = useCart();
   //   const { session } = useSession();
 
   //   console.log(user?.primaryEmailAddress?.emailAddress);
