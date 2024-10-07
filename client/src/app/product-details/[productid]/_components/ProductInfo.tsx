@@ -62,7 +62,6 @@ function ProductInfo({ product }: { product: Product }) {
       //     .addToCart(data)
       //     .then((res) => {
       //       console.log('res: ', res);
-      //     })
     }
   };
   return (
