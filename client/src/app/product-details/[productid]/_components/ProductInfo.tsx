@@ -48,7 +48,7 @@ function ProductInfo({ product }: { product: Product }) {
         // console.log('Response: ', responseData.data.id);
 
         setCart((prevCart) => [
-          ...cart,
+          ...prevCart,
           {
             id: responseData.data.id,
             product,
