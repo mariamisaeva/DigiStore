@@ -5,7 +5,7 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { BsCloudCheck } from 'react-icons/bs';
 import { IoAlertCircleOutline } from 'react-icons/io5';
 import SkeletonProductInfo from './SkeletonProductInfo';
-import { useUser } from '@clerk/nextjs';
+import { useUser, useSession } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 // import cartAPI from '../../../_utils/cartAPI';
 import { addToCart } from '../../../_utils/cartAPI';
@@ -13,6 +13,7 @@ import { addToCart } from '../../../_utils/cartAPI';
 function ProductInfo({ product }: { product: Product }) {
   const { user } = useUser();
   const router = useRouter();
+  //   const { session } = useSession();
 
   console.log(user?.primaryEmailAddress?.emailAddress);
   console.log(user?.fullName);
@@ -23,19 +24,34 @@ function ProductInfo({ product }: { product: Product }) {
       router.push('/sign-in');
     } else {
       //the logic of adding the product to the cart
-      const data = {
-        username: user.fullName || '',
-        email: user.primaryEmailAddress?.emailAddress || '',
-        product: [product?.id],
+      //   const bodyData = {
+      //     data: {
+      //       username: user.fullName || '',
+      //       email: user.primaryEmailAddress?.emailAddress || '',
+      //       product: [product?.id],
+      //     },
+      //   };
+
+      //   console.log('SESSION: ', session);
+      //   const token = await session?.getToken();
+      //   console.log('token: ', token);
+
+      const bodyData = {
+        data: {
+          username: user.fullName || '',
+          email: user.primaryEmailAddress?.emailAddress || '',
+          product: [product?.id],
+        },
       };
 
-      console.log('data in handleAddToCart: ', data);
+      //   console.log('data in handleAddToCart: ', data);
       try {
-        const res = await addToCart(data);
+        const res = await addToCart(bodyData);
         console.log('Response: ', res);
       } catch (err) {
         console.log('Error adding to cart: ', err);
       }
+
       //   cartAPI
       //     .addToCart(data)
       //     .then((res) => {

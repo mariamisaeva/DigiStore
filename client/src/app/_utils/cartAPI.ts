@@ -2,9 +2,11 @@ import axiosClient from './axiosInstance';
 import { AxiosResponse } from 'axios';
 
 export interface cartPayload {
-  username: string;
-  email: string;
-  product: number[]; //string or number
+  data: {
+    username: string;
+    email: string;
+    product: number[]; //string or number
+  };
 }
 
 export interface StrapiResponse<T> {
