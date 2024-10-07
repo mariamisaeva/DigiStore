@@ -44,6 +44,14 @@ function ProductInfo({ product }: { product: Product }) {
       try {
         const res = await addToCart(bodyData);
         console.log('Response: ', res);
+
+        setCart((prevCart) => [
+          ...cart,
+          {
+            id: res?.data?.data?.id,
+          },
+          product,
+        ]);
       } catch (err) {
         console.log('Error adding to cart: ', err);
       }

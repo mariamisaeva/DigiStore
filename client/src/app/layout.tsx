@@ -12,7 +12,7 @@ import {
   SignInButton,
   UserButton,
 } from '@clerk/nextjs';
-import { CartContext } from './_context/cartContext';
+import { CartProvider } from './_context/cartContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,13 +26,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [cart, setCart] = useState<any[]>([]);
+//   const [cart, setCart] = useState<any[]>([]);
 
   return (
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
-      <CartContext.Provider value={{ cart, setCart }}>
+      <CartProvider>
         <html lang="en">
           <body className={inter.className}>
             <Header />
@@ -46,7 +46,7 @@ export default function RootLayout({
             <Footer />
           </body>
         </html>
-      </CartContext.Provider>
+      </CartProvider>
     </ClerkProvider>
   );
 }
