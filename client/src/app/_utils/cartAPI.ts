@@ -5,7 +5,7 @@ export interface cartPayload {
   data: {
     username: string;
     email: string;
-    product: string[]; //string or number
+    product: number[]; //string or number
   };
 }
 
