@@ -58,7 +58,6 @@ function ProductInfo({ product }: { product: Product }) {
         console.log('Error adding to cart: ', err);
       }
 
-      //   cartAPI
       //     .addToCart(data)
       //     .then((res) => {
     }
