@@ -2,7 +2,7 @@ import axiosClient from './axiosInstance';
 import { AxiosResponse } from 'axios';
 
 export interface Product {
-  id: number;
+  id: string;
   attributes: {
     title: string;
     description: string;

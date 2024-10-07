@@ -13,7 +13,7 @@ import { addToCart } from '../../../_utils/cartAPI';
 function ProductInfo({ product }: { product: Product }) {
   const { user } = useUser();
   const router = useRouter();
-  //   const { session } = useSession();
+  const { session } = useSession();
 
   console.log(user?.primaryEmailAddress?.emailAddress);
   console.log(user?.fullName);
@@ -33,8 +33,8 @@ function ProductInfo({ product }: { product: Product }) {
       //   };
 
       //   console.log('SESSION: ', session);
-      //   const token = await session?.getToken();
-      //   console.log('token: ', token);
+      const token = await session?.getToken();
+      console.log('token: ', token);
 
       const bodyData = {
         data: {
