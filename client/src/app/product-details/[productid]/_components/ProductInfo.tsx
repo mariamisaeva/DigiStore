@@ -57,8 +57,6 @@ function ProductInfo({ product }: { product: Product }) {
       } catch (err) {
         console.log('Error adding to cart: ', err);
       }
-
-      //     .then((res) => {
     }
   };
   return (
