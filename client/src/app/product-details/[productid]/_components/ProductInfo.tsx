@@ -65,7 +65,6 @@ function ProductInfo({ product }: { product: Product }) {
       //     })
       //     .catch((err) => {
       //       console.log('err: ', err);
-      //     });
     }
   };
   return (
