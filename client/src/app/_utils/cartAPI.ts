@@ -31,7 +31,6 @@ const addToCart = (
 ): Promise<AxiosResponse<StrapiResponse<cartPayload>>> => {
   return axiosClient.post('/carts', payload);
 };
-// [populate]=image&filters[email][$eq]=mariamisaeva10101@gmail.com
 //  api/carts?populate[products][populate]=image&filters[email][$eq]=emailParam
 
 const getCartPerUser = (
