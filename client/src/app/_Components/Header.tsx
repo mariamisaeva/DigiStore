@@ -45,10 +45,6 @@ function Header() {
   }, [pathname]);
 
   useEffect(() => {
-    // if (user) {
-    //   const email = user?.primaryEmailAddress?.emailAddress || '';
-    //   fetchUserCart(email);
-    // }
     const email = user?.primaryEmailAddress?.emailAddress || '';
     user && fetchUserCart(email);
   }, [user]);
