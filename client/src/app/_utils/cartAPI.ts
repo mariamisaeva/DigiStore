@@ -20,6 +20,16 @@ const addToCart = (
   return axiosClient.post('/carts', payload);
 };
 
+//  api/carts?populate[products][populate]=image&filters[email][$eq]=emailParam
+
+const getCartPerUser = (
+  email: string,
+): Promise<AxiosResponse<StrapiResponse<cartPayload>>> => {
+  return axiosClient.get(
+    `/carts?populate[products][populate]=image&filters[email][$eq]=${email}`,
+  );
+};
+
 // const addToCart = (payload: Request) => {
 //   console.log('Sending to cart...');
 //   console.log('The data in cartAPI: ', payload);
@@ -54,4 +64,4 @@ const addToCart = (
 //   }
 // };
 
-export { addToCart };
+export { addToCart, getCartPerUser };
