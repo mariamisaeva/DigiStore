@@ -5,6 +5,7 @@ import { UserButton, useUser } from '@clerk/nextjs';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '../_context/cartContext';
+import { getCartPerUser } from '../_utils/cartAPI';
 
 function Header() {
   const { user } = useUser();
@@ -24,6 +25,20 @@ function Header() {
 
     setShowHeader(!shouldHideHeader);
   }, [pathname]);
+
+  useEffect(() => {
+    user && getUserCart();
+  }, [user]);
+  const getUserCart = async () => {
+    const email = user?.primaryEmailAddress?.emailAddress || '';
+    try {
+      const res = await getCartPerUser(email);
+      console.log('Cart Response: ', res);
+    } catch (err) {
+      console.error('ERROR: ', err);
+    }
+  };
+
   //   console.log(window.location.href);
   //   const [loggedIn, setLoggedIn] = useState(false);
   //   useEffect(() => {
