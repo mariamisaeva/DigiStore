@@ -1,6 +1,18 @@
 import axiosClient from './axiosInstance';
 import { AxiosResponse } from 'axios';
 
+export interface CartItem {
+  // id: number;
+  attributes: {
+    //   username: string;
+    //   email: string;
+    products: any[]; // Adjust this type to match the actual structure of products
+    //   createdAt: string;
+    //   updatedAt: string;
+    //   publishedAt: string;
+  };
+}
+
 export interface cartPayload {
   data: {
     username: string;
@@ -24,7 +36,7 @@ const addToCart = (
 
 const getCartPerUser = (
   email: string,
-): Promise<AxiosResponse<StrapiResponse<cartPayload>>> => {
+): Promise<AxiosResponse<StrapiResponse<CartItem[]>>> => {
   return axiosClient.get(
     `/carts?populate[products][populate]=image&filters[email][$eq]=${email}`,
   );

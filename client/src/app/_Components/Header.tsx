@@ -17,7 +17,10 @@ function Header() {
   const fetchUserCart = async (email: string) => {
     try {
       const res = await getCartPerUser(email);
-      console.log('Cart Response: ', res?.data?.data);
+      console.log('Cart Response: ', res?.data?.data); //AN ARRAY
+      res?.data?.data.forEach((item) => {
+        console.log(item.id);
+      });
     } catch (err) {
       console.error('ERROR: ', err);
     }
