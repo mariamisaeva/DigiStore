@@ -12,7 +12,7 @@ function Header() {
 
   const [showHeader, setShowHeader] = useState(true);
 
-  const { cart, setCart } = useCart();
+  const { cart /*, setCart*/ } = useCart();
 
   useEffect(() => {
     // const path = typeof window !== 'undefined' ? window.location.pathname : '';
