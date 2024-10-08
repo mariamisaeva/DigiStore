@@ -31,26 +31,27 @@ function ProductInfo({ product }: { product: Product }) {
       //   console.log('SESSION: ', session);
       //   const token = await session?.getToken();
       //   console.log('token: ', token);
-
+      console.log('PRODUCT ID', product?.id);
       const bodyData = {
         data: {
           username: user.fullName || '',
           email: user.primaryEmailAddress?.emailAddress || '',
-          product: [product?.id],
+          products: [product?.id],
         },
       };
       //   console.log('data in handleAddToCart: ', data);
 
       try {
         const res = await addToCart(bodyData);
-
-        const responseData = res.data as any;
+        console.log('RES: ', res);
+        console.log(res.data.data);
+        const responseData = res.data.data as any;
         // console.log('Response: ', responseData.data.id);
-
+        console.log('PRODUCTS:', product);
         setCart((prevCart) => [
           ...prevCart,
           {
-            id: responseData.data.id,
+            id: responseData.id,
             product,
           },
         ]);
