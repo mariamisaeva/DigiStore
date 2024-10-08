@@ -2,7 +2,7 @@ import axiosClient from './axiosInstance';
 import { AxiosResponse } from 'axios';
 
 export interface CartItem {
-  // id: number;
+  id: number;
   attributes: {
     //   username: string;
     //   email: string;

@@ -12,14 +12,14 @@ function Header() {
   const pathname = usePathname();
 
   const [showHeader, setShowHeader] = useState(true);
-  const { cart /*, setCart*/ } = useCart();
+  const { cart, setCart } = useCart();
 
   const fetchUserCart = async (email: string) => {
     try {
       const res = await getCartPerUser(email);
       console.log('Cart Response: ', res?.data?.data); //AN ARRAY
       res?.data?.data.forEach((item) => {
-        console.log(item.id);
+        setUncaughtExceptionCaptureCallback();
       });
     } catch (err) {
       console.error('ERROR: ', err);
