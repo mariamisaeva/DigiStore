@@ -7,13 +7,31 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '../_context/cartContext';
 import { getCartPerUser } from '../_utils/cartAPI';
 
+const fetchUserCart = async (email: string) => {
+  try {
+    const res = await getCartPerUser(email);
+    console.log('Cart Response: ', res?.data?.data);
+  } catch (err) {
+    console.error('ERROR: ', err);
+  }
+};
+
 function Header() {
   const { user } = useUser();
   const pathname = usePathname();
 
   const [showHeader, setShowHeader] = useState(true);
-
   const { cart /*, setCart*/ } = useCart();
+
+  //   const getUserCart = async () => {
+  //     const email = user?.primaryEmailAddress?.emailAddress || '';
+  //     try {
+  //       const res = await getCartPerUser(email);
+  //       console.log('Cart Response: ', res);
+  //     } catch (err) {
+  //       console.error('ERROR: ', err);
+  //     }
+  //   };
 
   useEffect(() => {
     // const path = typeof window !== 'undefined' ? window.location.pathname : '';
@@ -27,17 +45,13 @@ function Header() {
   }, [pathname]);
 
   useEffect(() => {
-    user && getUserCart();
-  }, [user]);
-  const getUserCart = async () => {
+    // if (user) {
+    //   const email = user?.primaryEmailAddress?.emailAddress || '';
+    //   fetchUserCart(email);
+    // }
     const email = user?.primaryEmailAddress?.emailAddress || '';
-    try {
-      const res = await getCartPerUser(email);
-      console.log('Cart Response: ', res);
-    } catch (err) {
-      console.error('ERROR: ', err);
-    }
-  };
+    user && fetchUserCart(email);
+  }, [user]);
 
   //   console.log(window.location.href);
   //   const [loggedIn, setLoggedIn] = useState(false);
