@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { RiShoppingCartLine } from 'react-icons/ri';
