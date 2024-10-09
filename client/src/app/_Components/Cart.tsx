@@ -31,6 +31,7 @@ function Cart() {
         <ul className="space-y-4">
           {cart?.map((item) => (
             <li key={item?.id} className="flex items-center gap-4">
+              {console.log(item)}
               <Image
                 src={item?.product?.attributes?.image?.data?.attributes?.url}
                 alt="Product Image"
@@ -39,12 +40,16 @@ function Cart() {
                 className="size-16 rounded object-cover"
               />
               <div>
-                <h3 className="text-sm text-gray-900">Basic Tee 6-Pack</h3>
+                <h3 className="text-sm text-gray-900">
+                  {item?.product?.attributes?.title}
+                </h3>
 
                 <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
                   <div>
-                    <dt className="inline">Size:</dt>
-                    <dd className="inline">XXS</dd>
+                    <dt className="inline">Cat.:</dt>
+                    <dd className="inline">
+                      {item?.product?.attributes?.category}
+                    </dd>
                   </div>
 
                   <div>
@@ -111,7 +116,7 @@ function Cart() {
             href="#"
             className="block rounded border border-gray-600 px-5 py-3 text-sm text-gray-600 transition hover:ring-1 hover:ring-gray-400"
           >
-            View my cart (2)
+            View my cart ({cart?.length})
           </a>
 
           <a
