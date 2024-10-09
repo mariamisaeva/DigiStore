@@ -6,6 +6,7 @@ import { RiShoppingCartLine } from 'react-icons/ri';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '../_context/cartContext';
 import { getCartPerUser, CartItem } from '../_utils/cartAPI';
+import Cart from './Cart';
 
 function Header() {
   const { user } = useUser();
@@ -168,6 +169,7 @@ function Header() {
                     {cart?.length}
                   </h2>
                   <UserButton />
+                  <Cart />
                 </div>
               )}
 
