@@ -54,7 +54,7 @@ function Cart() {
                   </div>
 
                   <div>
-                    <dt className="inline">Price:</dt>
+                    <dt className="inline">Price: $</dt>
                     <dd className="inline">
                       {item?.product?.attributes?.price}
                     </dd>
