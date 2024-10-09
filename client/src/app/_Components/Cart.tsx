@@ -47,15 +47,17 @@ function Cart() {
 
                 <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
                   <div>
-                    <dt className="inline">Cat.:</dt>
+                    <dt className="inline">Category:</dt>
                     <dd className="inline">
                       {item?.product?.attributes?.category}
                     </dd>
                   </div>
 
                   <div>
-                    <dt className="inline">Color:</dt>
-                    <dd className="inline">White</dd>
+                    <dt className="inline">Price:</dt>
+                    <dd className="inline">
+                      {item?.product?.attributes?.price}
+                    </dd>
                   </div>
                 </dl>
               </div>
