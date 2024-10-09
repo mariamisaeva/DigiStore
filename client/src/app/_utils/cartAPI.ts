@@ -6,7 +6,9 @@ export interface CartItem {
   attributes: {
     //   username: string;
     //   email: string;
-    products: any[]; // Adjust this type to match the actual structure of products
+    products: {
+      data: any[];
+    };
     //   createdAt: string;
     //   updatedAt: string;
     //   publishedAt: string;

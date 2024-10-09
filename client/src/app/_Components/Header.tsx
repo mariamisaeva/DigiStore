@@ -5,7 +5,7 @@ import { UserButton, useUser } from '@clerk/nextjs';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { usePathname, useRouter } from 'next/navigation';
 import { useCart } from '../_context/cartContext';
-import { getCartPerUser } from '../_utils/cartAPI';
+import { getCartPerUser, CartItem } from '../_utils/cartAPI';
 
 function Header() {
   const { user } = useUser();
@@ -18,8 +18,14 @@ function Header() {
     try {
       const res = await getCartPerUser(email);
       console.log('Cart Response: ', res?.data?.data); //AN ARRAY
-      res?.data?.data.forEach((item) => {
-        setUncaughtExceptionCaptureCallback();
+      res?.data?.data.forEach((item: CartItem) => {
+        setCart((prevCart) => [
+          ...prevCart,
+          {
+            id: item?.id,
+            product: item?.attributes?.products?.data[0],
+          },
+        ]);
       });
     } catch (err) {
       console.error('ERROR: ', err);
