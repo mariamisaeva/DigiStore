@@ -13,7 +13,10 @@ function Header() {
   const pathname = usePathname();
 
   const [showHeader, setShowHeader] = useState(true);
+
   const { cart, setCart } = useCart();
+
+  const [toggleCart, setToggleCart] = useState(false);
 
   const fetchUserCart = async (email: string) => {
     try {
@@ -160,6 +163,7 @@ function Header() {
                     style={{ color: 'black' }}
                   >
                     <RiShoppingCartLine
+                      onClick={() => setToggleCart(!toggleCart)}
                       color="black"
                       style={{
                         padding: 0,
@@ -169,7 +173,7 @@ function Header() {
                     {cart?.length}
                   </h2>
                   <UserButton />
-                  <Cart />
+                  {toggleCart && <Cart />}
                 </div>
               )}
 
