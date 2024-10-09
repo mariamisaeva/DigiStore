@@ -32,13 +32,12 @@ function Cart() {
           {cart?.map((item) => (
             <li key={item?.id} className="flex items-center gap-4">
               <Image
-                src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
+                src={item?.product?.attributes?.image?.data?.attributes?.url}
                 alt="Product Image"
                 width={80} // You can adjust the width and height according to your design
                 height={80}
                 className="size-16 rounded object-cover"
               />
-
               <div>
                 <h3 className="text-sm text-gray-900">Basic Tee 6-Pack</h3>
 
