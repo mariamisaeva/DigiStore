@@ -167,7 +167,7 @@ function Header() {
                     />
                     {cart?.length}
                   </h2>
-                  <UserButton />s
+                  <UserButton />
                 </div>
               )}
 
