@@ -5,6 +5,14 @@ import { useCart } from '../_context/cartContext';
 
 function CartPage() {
   const { cart, setCart } = useCart();
+
+  const getTotal = () => {
+    return cart.reduce(
+      (acc, item) => acc + Number(item.product.attributes.price),
+      0,
+    );
+  };
+
   return (
     <div>
       <section>
