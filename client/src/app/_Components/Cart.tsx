@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCart } from '../_context/cartContext';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Cart() {
   const { cart, setCart } = useCart();
@@ -16,13 +17,13 @@ function Cart() {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke-width="1.5"
+          strokeWidth="1.5"
           stroke="currentColor"
           className="size-5"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
@@ -114,12 +115,12 @@ function Cart() {
         </ul>
 
         <div className="space-y-4 text-center">
-          <a
-            href="#"
+          <Link
+            href="/cart"
             className="block rounded border border-gray-600 px-5 py-3 text-sm text-gray-600 transition hover:ring-1 hover:ring-gray-400"
           >
             View my cart ({cart?.length})
-          </a>
+          </Link>
 
           <a
             href="#"
