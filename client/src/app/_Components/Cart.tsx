@@ -40,7 +40,8 @@ function Cart() {
                 className="size-16 rounded object-cover"
               />
               <div>
-                <h3 className="text-sm text-gray-900">
+                <h3 className="text-sm text-gray-900 line-clamp-1">
+                  {/* one line */}
                   {item?.product?.attributes?.title}
                 </h3>
 
