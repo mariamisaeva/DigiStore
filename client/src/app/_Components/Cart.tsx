@@ -34,7 +34,7 @@ function Cart() {
               <Image
                 src={item?.product?.attributes?.image?.data?.attributes?.url}
                 alt="Product Image"
-                width={80} // You can adjust the width and height according to your design
+                width={80}
                 height={80}
                 className="size-16 rounded object-cover"
               />
