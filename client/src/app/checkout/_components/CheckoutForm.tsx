@@ -4,14 +4,22 @@ import {
   PaymentElement,
 } from '@stripe/react-stripe-js';
 
+import { useState } from 'react';
+
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
 
-  const handleSubmit = async (event: any) => {
-    // We don't want to let default form submission happen here,
-    // which would refresh the page.
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    const handleError = (error: any) => {
+      setLoading(false);
+      setErrorMessage(error.message);
+    };
 
     if (!stripe || !elements) {
       // Stripe.js hasn't yet loaded.
@@ -19,21 +27,35 @@ const CheckoutForm = () => {
       return;
     }
 
-    const res = await fetch('api/create-intent', {
+    // Trigger form validation and wallet collection
+    const { error: submitError } = await elements.submit();
+    if (submitError) {
+      handleError(submitError);
+      return;
+    }
+
+    const res = await fetch('/api/create-intent', {
       method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
-        amount: 10,
+        amount: 1000,
       }),
     });
 
+    if (!res.ok) {
+      console.error('Failed to create payment intent:', res.statusText);
+      return;
+    }
+
+    const { client_secret: clientSecret } = await res.json();
+
     const result = await stripe.confirmPayment({
-      //`Elements` instance that was used to create the Payment Element
+      clientSecret,
       elements,
       confirmParams: {
-        return_url: 'https://example.com/order/123/complete',
+        return_url: 'http://localhost:3000/',
       },
     });
 
