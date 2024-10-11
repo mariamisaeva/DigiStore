@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { useCart } from '../_context/cartContext';
+import { deleteCartItem } from '../_utils/cartAPI';
 
 function CartPage() {
   const { cart, setCart } = useCart();
@@ -12,6 +13,21 @@ function CartPage() {
       0,
     );
     return Number(total.toFixed(2));
+  };
+
+  const deleteItem = async (id: any) => {
+    // console.log('ID: ', id);
+    try {
+      const res = await deleteCartItem(id);
+      console.log(res);
+      if (res) {
+        setCart((prevCart) =>
+          prevCart.filter((item) => item.id !== res?.data?.data?.id),
+        );
+      }
+    } catch (err) {
+      console.error('ERROR: ', err);
+    }
   };
 
   return (
@@ -59,7 +75,10 @@ function CartPage() {
                         ${item?.product?.attributes?.price}
                       </div>
 
-                      <button className="text-gray-600 transition hover:text-red-600">
+                      <button
+                        onClick={() => deleteItem(item?.id)}
+                        className="text-gray-600 transition hover:text-red-600"
+                      >
                         <span className="sr-only">Remove item</span>
 
                         <svg
