@@ -110,8 +110,6 @@ function CartPage() {
                     className="size-16 rounded object-cover"
                   />
 
-    
-
                       <div>
                         <dt className="inline">Color:</dt>
                         <dd className="inline">White</dd>
