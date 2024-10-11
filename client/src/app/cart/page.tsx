@@ -110,11 +110,7 @@ function CartPage() {
                     className="size-16 rounded object-cover"
                   />
 
-                  <div>
-                    <h3 className="text-sm text-gray-900">Basic Tee 6-Pack</h3>
-
-                    <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
-                      <div>
+                 
                         <dt className="inline">Size:</dt>
                         <dd className="inline">XXS</dd>
                       </div>
