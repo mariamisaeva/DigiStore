@@ -12,17 +12,19 @@ const stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY);
 
 function Checkout() {
   const searchParams = useSearchParams();
+  const amountInDollars = parseFloat(searchParams.get('amount') || '0');
+  const amountInCents = Math.round(amountInDollars * 100); // Convert dollars to cents
 
   const options = {
     mode: 'payment',
     currency: 'usd',
     //   payment_method_types: ['paypal'],
-    amount: Number(searchParams.get('amount')),
+    amount: amountInCents,
   };
 
   return (
     <Elements stripe={stripePromise} options={options}>
-      <CheckoutForm amount={Number(searchParams.get('amount'))} />
+      <CheckoutForm amount={amountInCents} />
     </Elements>
   );
 }

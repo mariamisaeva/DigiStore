@@ -10,7 +10,11 @@ interface CheckoutFormProps {
   amount: number;
 }
 
-const CheckoutForm: React.FC<CheckoutFormProps> = ({ amount }) => {
+const CheckoutForm: React.FC<CheckoutFormProps> = ({
+  amount,
+}: {
+  amount: number;
+}) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -59,7 +63,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ amount }) => {
       clientSecret,
       elements,
       confirmParams: {
-        return_url: 'http://localhost:3000/',
+        return_url: 'http://localhost:3000/payment-success',
       },
     });
 
