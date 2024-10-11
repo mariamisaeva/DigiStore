@@ -19,6 +19,16 @@ const CheckoutForm = () => {
       return;
     }
 
+    const res = await fetch('api/create-intent', {
+      method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      body: JSON.stringify({
+        amount: 10,
+      }),
+    });
+
     const result = await stripe.confirmPayment({
       //`Elements` instance that was used to create the Payment Element
       elements,
