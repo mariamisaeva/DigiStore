@@ -6,7 +6,11 @@ import {
 
 import { useState } from 'react';
 
-const CheckoutForm = () => {
+interface CheckoutFormProps {
+  amount: number;
+}
+
+const CheckoutForm: React.FC<CheckoutFormProps> = ({ amount }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -40,7 +44,7 @@ const CheckoutForm = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        amount: 1000,
+        amount: amount,
       }),
     });
 

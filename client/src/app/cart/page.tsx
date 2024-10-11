@@ -3,9 +3,11 @@ import Image from 'next/image';
 import React from 'react';
 import { useCart } from '../_context/cartContext';
 import { deleteCartItem } from '../_utils/cartAPI';
+import { useRouter } from 'next/navigation';
 
 function CartPage() {
   const { cart, setCart } = useCart();
+  const router = useRouter();
 
   const getTotal = () => {
     let total = cart.reduce(
@@ -232,7 +234,12 @@ function CartPage() {
                   </dl>
 
                   <div className="flex justify-end">
-                    <button className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600">
+                    <button
+                      onClick={() =>
+                        router.push(`/checkout?amount=${getTotal()}`)
+                      }
+                      className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
+                    >
                       Checkout
                     </button>
                   </div>
