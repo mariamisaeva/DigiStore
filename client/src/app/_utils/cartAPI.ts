@@ -43,6 +43,10 @@ const getCartPerUser = (
   );
 };
 
+const deleteCartItem = (id: any) => {
+  return axiosClient.delete(`/carts/${id}`);
+};
+
 // const addToCart = (payload: Request) => {
 //   console.log('Sending to cart...');
 //   console.log('The data in cartAPI: ', payload);
@@ -77,4 +81,4 @@ const getCartPerUser = (
 //   }
 // };
 
-export { addToCart, getCartPerUser };
+export { addToCart, getCartPerUser, deleteCartItem };
