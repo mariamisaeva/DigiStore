@@ -2,7 +2,7 @@ import { PaymentElement } from '@stripe/react-stripe-js';
 
 const CheckoutForm = () => {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="mx-auto mt-20 max-w-sm sm:max-w-md lg:max-w-lg p-5">
         <PaymentElement />
 
