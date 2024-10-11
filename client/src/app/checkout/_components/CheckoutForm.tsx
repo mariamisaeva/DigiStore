@@ -6,7 +6,7 @@ const CheckoutForm = () => {
       <div className="mx-32 md:mx[300px] mt-20">
         <PaymentElement />
       </div>
-      <div className="">
+      <div className="bg-blue-500 p-2">
         <button>Submit</button>
       </div>
     </form>
