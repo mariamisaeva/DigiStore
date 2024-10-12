@@ -7,6 +7,8 @@ import {
 
 import { useState } from 'react';
 import { useUser } from '@clerk/nextjs';
+import { createOrder } from '../../_utils/ordersAPI';
+import { deleteCartItem } from '../../_utils/cartAPI';
 
 interface CheckoutFormProps {
   amount: number;
@@ -38,6 +40,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       // Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
+
+    fetchCreateOrder(); //call the func
 
     // Trigger form validation and wallet collection
     const { error: submitError } = await elements.submit();
@@ -78,6 +82,35 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       // Your customer will be redirected to your `return_url`. For some payment
       // methods like iDEAL, your customer will be redirected to an intermediate
       // site first to authorize the payment, then redirected to the `return_url`.
+    }
+  };
+
+  const fetchCreateOrder = async () => {
+    const ProductIds: any = [];
+    cart.forEach((item) => ProductIds.push(item?.product?.id));
+
+    const email = user?.primaryEmailAddress?.emailAddress || '';
+
+    const payload = {
+      data: {
+        username: user?.fullName || '',
+        email,
+        amount,
+        products: ProductIds,
+      },
+    };
+
+    try {
+      const res = await createOrder(payload);
+
+      if (res) {
+        cart.forEach((item) => {
+          deleteCartItem(item?.id).then((result) => {});
+        });
+      }
+      console.log(`res: `, res);
+    } catch (err) {
+      console.error('Error creating order:', err);
     }
   };
 

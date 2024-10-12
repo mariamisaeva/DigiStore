@@ -10,6 +10,7 @@ export interface OrderPayload {
   data: {
     username: string;
     email: string;
+    amount: number;
     products: string[];
   };
 }
