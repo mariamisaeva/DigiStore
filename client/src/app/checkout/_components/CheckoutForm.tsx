@@ -114,6 +114,18 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     }
   };
 
+  const send_email = async () => {
+    const res = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      //   body: JSON.stringify({
+      //     amount: amount,
+      //   }),
+    });
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="mx-auto mt-20 max-w-sm sm:max-w-md lg:max-w-lg p-5">
