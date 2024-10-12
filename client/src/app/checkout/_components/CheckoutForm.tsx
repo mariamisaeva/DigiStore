@@ -41,7 +41,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       return;
     }
 
-    fetchCreateOrder(); //call the func
+    fetchCreateOrder(); //call createOrder
+    send_email(); //call send email
 
     // Trigger form validation and wallet collection
     const { error: submitError } = await elements.submit();
