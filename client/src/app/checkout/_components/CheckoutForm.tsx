@@ -1,3 +1,4 @@
+import { useCart } from '@/app/_context/cartContext';
 import {
   useStripe,
   useElements,
@@ -5,6 +6,7 @@ import {
 } from '@stripe/react-stripe-js';
 
 import { useState } from 'react';
+import { useUser } from '@clerk/nextjs';
 
 interface CheckoutFormProps {
   amount: number;
@@ -15,6 +17,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 }: {
   amount: number;
 }) => {
+  const { cart, setCart } = useCart();
+  const { user } = useUser();
   const stripe = useStripe();
   const elements = useElements();
 
