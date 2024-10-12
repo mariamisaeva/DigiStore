@@ -19,7 +19,7 @@ import * as React from 'react';
 // }
 
 interface YelpRecentLoginEmailProps {
-  userFirstName?: string;
+  firstName?: string;
   loginDate?: Date;
   loginDevice?: string;
   loginLocation?: string;
@@ -39,7 +39,7 @@ const baseUrl = process.env.VERCEL_URL
   : '';
 
 export const EmailTemplate = ({
-  userFirstName,
+  firstName,
   loginDate,
   loginDevice,
   loginLocation,
@@ -78,7 +78,7 @@ export const EmailTemplate = ({
                     textAlign: 'center',
                   }}
                 >
-                  Hi {userFirstName},
+                  Hi {firstName},
                 </Heading>
                 <Heading
                   as="h2"
