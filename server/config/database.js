@@ -86,22 +86,22 @@ const path = require('path');
 //     };
 // };
 
-module.exports = ({ env }) => ({
-    connection: {
-        client: 'postgres',
-        connection: {
-            host: env('DATABASE_HOST', 'dpg-cs5s0hqjlk6c739tin5g-a'),
-            port: env.int('DATABASE_PORT', 5432),
-            database: env('DATABASE_NAME', 'strapi_db_smlq'),
-            user: env('DATABASE_USERNAME', 'strapi_db_smlq_user'),
-            password: env('DATABASE_PASSWORD', 'gc2TOQdo14fVF0sayPEf8pOBiorjpXXR'),
-            ssl: {
-                rejectUnauthorized: false,  // Set this to false to avoid SSL issues
-            },
-        },
-        pool: { min: 2, max: 10 },
-    },
-});
+// module.exports = ({ env }) => ({
+//     connection: {
+//         client: 'postgres',
+//         connection: {
+//             host: env('DATABASE_HOST', 'dpg-cs5s0hqjlk6c739tin5g-a'),
+//             port: env.int('DATABASE_PORT', 5432),
+//             database: env('DATABASE_NAME', 'strapi_db_smlq'),
+//             user: env('DATABASE_USERNAME', 'strapi_db_smlq_user'),
+//             password: env('DATABASE_PASSWORD', 'gc2TOQdo14fVF0sayPEf8pOBiorjpXXR'),
+//             ssl: {
+//                 rejectUnauthorized: false,  // Set this to false to avoid SSL issues
+//             },
+//         },
+//         pool: { min: 2, max: 10 },
+//     },
+// });
 
 module.exports = ({ env }) => {
     const client = env('DATABASE_CLIENT', 'sqlite');
