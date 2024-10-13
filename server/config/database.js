@@ -109,7 +109,7 @@ module.exports = ({ env }) => {
     const connections = {
         mysql: {
             connection: {
-                connectionString: env('DATABASE_URL'),
+                connectionString: env('DATABASE_URL', 'https://digistore-646t.onrender.com'),
                 host: env('DATABASE_HOST', 'localhost'),
                 port: env.int('DATABASE_PORT', 3306),
                 database: env('DATABASE_NAME', 'strapi'),
