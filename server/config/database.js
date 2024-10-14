@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 
 module.exports = ({ env }) => {
@@ -65,10 +66,25 @@ module.exports = ({ env }) => {
         sqlite: {
             connection: {
                 filename: path.join(__dirname, '..', env('DATABASE_FILENAME', './data/data.db')),
+
             },
             useNullAsDefault: true,
         },
+
     };
+
+    // Add this block to check if the SQLite file exists
+    if (client === 'sqlite') {
+        const dbPath = connections.sqlite.connection.filename;
+
+        // Log whether the SQLite file exists or not
+        console.log('Checking SQLite database path:', dbPath);
+        if (!fs.existsSync(dbPath)) {
+            console.error('SQLite database file not found:', dbPath);
+        } else {
+            console.log('SQLite database file found:', dbPath);
+        }
+    }
 
     return {
         connection: {
