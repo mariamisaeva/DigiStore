@@ -65,11 +65,11 @@ module.exports = ({ env }) => {
         },
         sqlite: {
             connection: {
-                // filename: path.join(__dirname, '..', env('DATABASE_FILENAME', './data/data.db')),
+                filename: path.join(__dirname, '..', env('DATABASE_FILENAME', './data/data.db')),
                 // Dynamic path based on the environment (local or Render)
-                filename: env('RENDER')  // Render's environment variable will be present in the Render environment
-                    ? '/opt/render/project/data.db'  // Use this path on Render
-                    : path.join(__dirname, '..', env('DATABASE_FILENAME', './data/data.db')),  // Use local path for development
+                // filename: env('RENDER') 
+                //     ? '/opt/render/project/data.db'  
+                //     : path.join(__dirname, '..', env('DATABASE_FILENAME', './data/data.db')), 
 
             },
             useNullAsDefault: true,
