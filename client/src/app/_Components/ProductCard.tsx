@@ -1,11 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import { TbCategoryFilled } from 'react-icons/tb';
+// import { Product } from '../_utils/productsAPI';
 import Link from 'next/link';
 
 export interface ProductCardProps {
+  //   product: Product;
   product: {
-    id: number;
+    id: string;
     attributes: {
       title: string;
       category: string;

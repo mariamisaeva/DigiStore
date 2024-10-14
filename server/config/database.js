@@ -66,11 +66,6 @@ module.exports = ({ env }) => {
         sqlite: {
             connection: {
                 filename: path.join(__dirname, '..', env('DATABASE_FILENAME', './data/data.db')),
-                // Dynamic path based on the environment (local or Render)
-                // filename: env('RENDER') 
-                //     ? '/opt/render/project/data.db'  
-                //     : path.join(__dirname, '..', env('DATABASE_FILENAME', './data/data.db')), 
-
             },
             useNullAsDefault: true,
         },

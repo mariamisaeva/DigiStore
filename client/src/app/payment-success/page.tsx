@@ -21,7 +21,7 @@ function page() {
             ></path>
           </svg>
           <h2 className="mt-6 text-3xl font-bold" style={{ color: 'black' }}>
-            Thanks for your purchase, we're getting it ready!
+            Thanks for your purchase, we&apos;re getting it ready!
           </h2>
 
           <a

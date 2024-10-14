@@ -115,11 +115,11 @@ export const EmailTemplate = ({
                 </Text>
 
                 <Text style={paragraph}>
-                  If this was you, there's nothing else you need to do.
+                  If this was you, there&apos;s nothing else you need to do.
                 </Text>
                 <Text style={{ ...paragraph, marginTop: -5 }}>
-                  If this wasn't you or if you have additional questions, please
-                  see our support page.
+                  If this wasn&apos;t you or if you have additional questions,
+                  please see our support page.
                 </Text>
               </Column>
             </Row>

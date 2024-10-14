@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './_components/CheckoutForm';
@@ -29,4 +29,13 @@ function Checkout() {
   );
 }
 
-export default Checkout;
+// export default Checkout;
+
+// Wrapping the Checkout component in Suspense to prevent pre-rendering issues with useSearchParams
+export default function SuspenseWrapper() {
+  return (
+    <Suspense fallback={<div>Loading checkout...</div>}>
+      <Checkout />
+    </Suspense>
+  );
+}

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { RiShoppingCartLine } from 'react-icons/ri';
@@ -18,23 +18,26 @@ function Header() {
 
   const [toggleCart, setToggleCart] = useState(false);
 
-  const fetchUserCart = async (email: string) => {
-    try {
-      const res = await getCartPerUser(email);
-      console.log('Cart Response: ', res?.data?.data); //AN ARRAY
-      res?.data?.data.forEach((item: CartItem) => {
-        setCart((prevCart) => [
-          ...prevCart,
-          {
-            id: item?.id,
-            product: item?.attributes?.products?.data[0],
-          },
-        ]);
-      });
-    } catch (err) {
-      console.error('ERROR: ', err);
-    }
-  };
+  const fetchUserCart = useCallback(
+    async (email: string) => {
+      try {
+        const res = await getCartPerUser(email);
+        console.log('Cart Response: ', res?.data?.data); //AN ARRAY
+        res?.data?.data.forEach((item: CartItem) => {
+          setCart((prevCart) => [
+            ...prevCart,
+            {
+              id: item?.id,
+              product: item?.attributes?.products?.data[0],
+            },
+          ]);
+        });
+      } catch (err) {
+        console.error('ERROR: ', err);
+      }
+    },
+    [setCart],
+  );
 
   //   const getUserCart = async () => {
   //     const email = user?.primaryEmailAddress?.emailAddress || '';
@@ -59,8 +62,11 @@ function Header() {
 
   useEffect(() => {
     const email = user?.primaryEmailAddress?.emailAddress || '';
-    user && fetchUserCart(email);
-  }, [user]);
+    // user && fetchUserCart(email);
+    if (user) {
+      fetchUserCart(email);
+    }
+  }, [user, fetchUserCart]);
 
   //   console.log(window.location.href);
   //   const [loggedIn, setLoggedIn] = useState(false);
