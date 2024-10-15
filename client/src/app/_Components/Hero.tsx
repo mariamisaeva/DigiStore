@@ -9,7 +9,7 @@ function Hero() {
   This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
 */}
 
-      <section className="relative bg-[url(https://static.vecteezy.com/system/resources/previews/000/543/610/original/vector-futuristic-blue-hexagon-honeycomb-abstract-technology-background-artificial-intelligence-digital-transformation-and-big-data-concept-business-quantum-internet-network-communication-concept.jpg)] bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-[url(https://res.cloudinary.com/dm4vls99s/image/upload/v1728992758/DigitalStore-Project/DALL_E_2024-10-15_13.14.37_-_A_light_blue_background_for_a_digital_products_website_designed_to_be_versatile_for_items_like_courses_e-books_and_software._The_background_feature_xumxd4.webp)] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-gray-900/75 sm:bg-transparent sm:from-gray-900/95 sm:to-gray-900/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
