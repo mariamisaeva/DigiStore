@@ -15,10 +15,16 @@ function Checkout() {
   const amountInDollars = parseFloat(searchParams.get('amount') || '0');
   const amountInCents = Math.round(amountInDollars * 100); // Convert dollars to cents
 
-  const options = {
+  const options: {
+    mode: 'payment';
+    currency: string;
+    amount: number;
+    // payment_method_types?: string[];
+    automatic_payment_methods: { enabled: boolean };
+  } = {
     mode: 'payment',
     currency: 'usd',
-    //   payment_method_types: ['paypal'],
+    automatic_payment_methods: { enabled: true },
     amount: amountInCents,
   };
 
