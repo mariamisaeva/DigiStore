@@ -15,14 +15,14 @@ module.exports = [
             },
         },
     },
-    {
+    {//====
         name: 'strapi::cors',
         config: {
             enabled: true,
             origin: [process.env.FRONTEND_URL], // Allow your Vercel frontend to make requests
             methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD'],
         },
-    },
+    },//========
     'strapi::cors',
     'strapi::poweredBy',
     'strapi::query',
