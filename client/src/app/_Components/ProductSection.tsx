@@ -19,7 +19,7 @@ export default function ProductSection() {
       //   console.log(res.data.data);
       setProductList(res.data.data);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 

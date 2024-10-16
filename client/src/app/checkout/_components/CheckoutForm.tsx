@@ -109,7 +109,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           deleteCartItem(item?.id).then((result) => {});
         });
       }
-      console.log(`res: `, res);
+      //   console.log(`res: `, res);
     } catch (err) {
       console.error('Error creating order:', err);
     }

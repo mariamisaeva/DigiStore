@@ -72,18 +72,18 @@ module.exports = ({ env }) => {
 
     };
 
-    // Add this block to check if the SQLite file exists
-    if (client === 'sqlite') {
-        const dbPath = connections.sqlite.connection.filename;
+    // // Add this block to check if the SQLite file exists
+    // if (client === 'sqlite') {
+    //     const dbPath = connections.sqlite.connection.filename;
 
-        // Log whether the SQLite file exists or not
-        console.log('Checking SQLite database path:', dbPath);
-        if (!fs.existsSync(dbPath)) {
-            console.error('SQLite database file not found:', dbPath);
-        } else {
-            console.log('SQLite database file found:', dbPath);
-        }
-    }
+    //     // Log whether the SQLite file exists or not
+    //     console.log('Checking SQLite database path:', dbPath);
+    //     if (!fs.existsSync(dbPath)) {
+    //         console.error('SQLite database file not found:', dbPath);
+    //     } else {
+    //         console.log('SQLite database file found:', dbPath);
+    //     }
+    // }
 
     return {
         connection: {

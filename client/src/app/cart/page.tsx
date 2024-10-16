@@ -21,7 +21,7 @@ function CartPage() {
     // console.log('ID: ', id);
     try {
       const res = await deleteCartItem(id);
-      console.log(res);
+      //   console.log(res);
       if (res) {
         setCart((prevCart) =>
           prevCart.filter((item) => item.id !== res?.data?.data?.id),

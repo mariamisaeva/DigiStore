@@ -22,7 +22,7 @@ function Header() {
     async (email: string) => {
       try {
         const res = await getCartPerUser(email);
-        console.log('Cart Response: ', res?.data?.data); //AN ARRAY
+        // console.log('Cart Response: ', res?.data?.data); //AN ARRAY
         res?.data?.data.forEach((item: CartItem) => {
           setCart((prevCart) => [
             ...prevCart,

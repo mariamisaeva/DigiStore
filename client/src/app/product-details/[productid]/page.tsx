@@ -34,7 +34,7 @@ function DetailsPage({ params }: any) {
         setProductDetails(res.data.data);
         // getProductByCategory(res.data.data); //func call
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     }
 
@@ -54,7 +54,7 @@ function DetailsPage({ params }: any) {
       //   console.log('Here is the Response: ', res?.data?.data);
       setSimilarProductList(res?.data?.data);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
 
