@@ -23,7 +23,6 @@ function DetailsPage({ params }: any) {
 
   useEffect(() => {
     async function fetchProductById() {
-      console.log('Product ID (PARAMS):', params); // Check if productId is being received
       if (!params?.productid) {
         console.error('Product ID is undefined!');
         return;
@@ -40,7 +39,7 @@ function DetailsPage({ params }: any) {
     }
 
     fetchProductById();
-  }, [params /*?.productId*/]);
+  }, [params?.productid]);
 
   useEffect(() => {
     if (productDetails) {
