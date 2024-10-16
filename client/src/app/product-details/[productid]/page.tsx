@@ -21,6 +21,11 @@ function DetailsPage({ params }: any) {
     Product[] | null
   >(null);
 
+  // Log to check if productId is being passed correctly
+  useEffect(() => {
+    console.log('Product ID:', params?.productId);
+  }, [params]);
+
   useEffect(() => {
     async function fetchProductById() {
       try {
