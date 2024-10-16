@@ -23,6 +23,7 @@ export interface ProductCardProps {
   };
 }
 export default function ProductCard({ product }: ProductCardProps) {
+  console.log('Product ID:', product.id);
   return (
     <Link
       href={`/product-details/${product?.id}`}
