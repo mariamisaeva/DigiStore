@@ -21,13 +21,14 @@ function DetailsPage({ params }: any) {
     Product[] | null
   >(null);
 
-  // Log to check if productId is being passed correctly
-  useEffect(() => {
-    console.log('Product ID:', params?.productId);
-  }, [params]);
-
   useEffect(() => {
     async function fetchProductById() {
+      console.log('Product ID:', params?.productId); // Check if productId is being received
+      if (!params?.productId) {
+        console.error('Product ID is undefined!');
+        return;
+      }
+
       try {
         const res = await getProductById(params?.productId);
         // console.log(res.data.data);
