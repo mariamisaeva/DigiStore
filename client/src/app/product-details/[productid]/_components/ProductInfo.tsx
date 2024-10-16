@@ -22,7 +22,7 @@ function ProductInfo({ product }: { product: Product }) {
   //   console.log(user?.fullName);
 
   const handleAddToCart = async () => {
-    console.log('add to cart');
+    // console.log('add to cart');
     if (!user) {
       router.push('/sign-in');
     } else {
@@ -31,7 +31,7 @@ function ProductInfo({ product }: { product: Product }) {
       //   console.log('SESSION: ', session);
       //   const token = await session?.getToken();
       //   console.log('token: ', token);
-      console.log('PRODUCT ID', product?.id);
+      //   console.log('PRODUCT ID', product?.id);
       const bodyData = {
         data: {
           username: user.fullName || '',
@@ -43,11 +43,11 @@ function ProductInfo({ product }: { product: Product }) {
 
       try {
         const res = await addToCart(bodyData);
-        console.log('RES: ', res);
-        console.log(res.data.data);
+        // console.log('RES: ', res);
+        // console.log(res.data.data);
         const responseData = res.data.data as any;
         // console.log('Response: ', responseData.data.id);
-        console.log('PRODUCTS:', product);
+        // console.log('PRODUCTS:', product);
         setCart((prevCart) => [
           ...prevCart,
           {
@@ -56,7 +56,7 @@ function ProductInfo({ product }: { product: Product }) {
           },
         ]);
       } catch (err) {
-        console.log('Error adding to cart: ', err);
+        console.error('Error adding to cart: ', err);
       }
     }
   };
