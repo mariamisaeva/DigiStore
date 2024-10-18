@@ -8,6 +8,9 @@ import { Product } from '../_utils/productsAPI';
 export default function ProductSection() {
   const [productList, setProductList] = useState<Product[]>([]);
 
+  //a state for featured products
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+
   useEffect(() => {
     fetchLatestProducts();
   }, []);
@@ -17,7 +20,15 @@ export default function ProductSection() {
       const res: AxiosResponse<StrapiResponse<Product[]>> =
         await getLatestProducts();
       //   console.log(res.data.data);
-      setProductList(res.data.data);
+      //   setProductList(res.data.data);
+      const allProducts = res.data.data; //get all products
+      //select 8 random
+      const randomProducts = [...allProducts]
+        .sort(() => Math.random() - 0.5) //shuffle
+        .slice(0, 4);
+
+      setFeaturedProducts(randomProducts);
+      setProductList(allProducts); //store all products
     } catch (err) {
       console.error(err);
     }
@@ -25,8 +36,12 @@ export default function ProductSection() {
 
   return (
     <div className="px-10 md:px-20 pt-10">
-      {/*Add margin*/}
+      {/*Featured products section*/}
       <h1 className="text-3xl font-bold text-black my-4">Featured Products</h1>
+      <ProductList productList={featuredProducts} />
+
+      {/*All products section*/}
+      <h1 className="text-3xl font-bold text-black my-4">All Products</h1>
       <ProductList productList={productList} />
     </div>
   );
