@@ -12,6 +12,7 @@ export default function AllProductsPage() {
   const [loadCount, setLoadCount] = useState(2); // Start by loading 10 products at a time
   const [searchQuery, setSearchQuery] = useState(''); //search input
   const [selectedCategory, setSelectedCategory] = useState(''); //category
+  const [categories, setCategories] = useState<string[]>([]); //categories I render in dropdown
 
   useEffect(() => {
     fetchAllProducts();
@@ -27,6 +28,14 @@ export default function AllProductsPage() {
         await getLatestProducts();
       setProductList(res.data.data); // Store all products
       setVisibleProducts(res.data.data.slice(0, loadCount)); // Initially load 10 products
+
+      // get unique categories from products
+      const uniqueCategories = Array.from(
+        new Set(res.data.data.map((product) => product.attributes.category)),
+      );
+      //  setCategories(uniqueCategories);
+      console.log(uniqueCategories);
+      setCategories(uniqueCategories);
     } catch (err) {
       console.error(err);
     }
@@ -48,7 +57,7 @@ export default function AllProductsPage() {
     setVisibleProducts(productList.slice(0, newVisibleCount));
   };
 
-  const handleShowMore = () => {
+  const handleLoadMore = () => {
     setLoadCount(loadCount + 2); // Load 10 more products
   };
 
@@ -60,15 +69,17 @@ export default function AllProductsPage() {
         selectedCategory={selectedCategory}
         setSearchQuery={setSearchQuery}
         setSelectedCategory={setSelectedCategory}
+        categories={categories}
       />
 
       {/* All products section */}
       <h1 className="text-3xl font-bold text-black my-4">All Products</h1>
-      <ProductList productList={visibleProducts} />
+      {/* <ProductList productList={visibleProducts} /> */}
+      <ProductList productList={filteredProducts.slice(0, loadCount)} />
 
       {visibleProducts.length < productList.length && (
         <button
-          onClick={handleShowMore}
+          onClick={handleLoadMore}
           className="mt-4 p-2 bg-blue-500 text-white rounded-lg"
         >
           Load More

@@ -13,6 +13,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   setSearchQuery,
   selectedCategory,
   setSelectedCategory,
+  categories,
 }) => {
   return (
     <div className="mb-6">
@@ -31,7 +32,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
         className="p-2 border border-gray-300 rounded-md w-full"
       >
         <option value="">All Categories</option>
-        {}
+        {categories.map((cat, index) => (
+          <option key={index} value={cat}>
+            {cat}
+          </option>
+        ))}
       </select>
     </div>
   );
