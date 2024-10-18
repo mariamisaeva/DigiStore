@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ProductList from '../_Components/ProductList'; // Assuming ProductList is a shared component
 import { getLatestProducts, StrapiResponse } from '../_utils/productsAPI';
 import { AxiosResponse } from 'axios';
@@ -52,10 +52,10 @@ export default function AllProductsPage() {
     );
   });
 
-  const loadMoreProducts = () => {
+  const loadMoreProducts = /*useCallback(*/ () => {
     const newVisibleCount = visibleProducts.length + 2;
     setVisibleProducts(productList.slice(0, newVisibleCount));
-  };
+  }; /*, [visibleProducts, productList])*/
 
   const handleLoadMore = () => {
     setLoadCount(loadCount + 2); // Load 10 more products

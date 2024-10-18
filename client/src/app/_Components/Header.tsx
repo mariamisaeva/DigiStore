@@ -3,10 +3,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { RiShoppingCartLine } from 'react-icons/ri';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useCart } from '../_context/cartContext';
 import { getCartPerUser, CartItem } from '../_utils/cartAPI';
 import Cart from './Cart';
+import Link from 'next/link';
 
 function Header() {
   const { user } = useUser();
@@ -79,7 +80,15 @@ function Header() {
       <header className="bg-white">
         <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
           {/*shadow-md*/}
-          <Image src="/logo.svg" alt="logo" width={170} height={170} />
+          <Link href="/">
+            <Image
+              src="/logo.svg"
+              alt="logo"
+              width={170}
+              height={170}
+              className="cursor-pointer"
+            />
+          </Link>
           <div className="flex flex-1 items-center justify-end md:justify-between">
             <nav aria-label="Global" className="hidden md:block">
               <ul className="flex items-center gap-6 text-sm">

@@ -23,13 +23,13 @@ function DetailsPage({ params }: any) {
 
   useEffect(() => {
     async function fetchProductById() {
-      if (!params?.productid) {
+      if (!params?.productId) {
         console.error('Product ID is undefined!');
         return;
       }
 
       try {
-        const res = await getProductById(params?.productid);
+        const res = await getProductById(params?.productId);
         // console.log(res.data.data);
         setProductDetails(res.data.data);
         // getProductByCategory(res.data.data); //func call
@@ -39,7 +39,7 @@ function DetailsPage({ params }: any) {
     }
 
     fetchProductById();
-  }, [params?.productid]);
+  }, [params?.productId]);
 
   useEffect(() => {
     if (productDetails) {
