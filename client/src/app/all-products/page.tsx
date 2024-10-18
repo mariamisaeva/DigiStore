@@ -49,7 +49,7 @@ export default function AllProductsPage() {
           onClick={handleShowMore}
           className="mt-4 p-2 bg-blue-500 text-white rounded-lg"
         >
-          Show More
+          Load More
         </button>
       )}
     </div>
