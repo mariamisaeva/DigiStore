@@ -30,14 +30,14 @@ function Hero() {
 
             <div className="mt-8 flex flex-wrap gap-4 text-center">
               <a
-                href="#"
+                href="/all-products"
                 className="block w-full rounded bg-blue-700 px-12 py-3 text-sm font-medium text-white shadow hover:bg-[#6EACDA]  focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
               >
                 SHOP NOW
               </a>
 
               <a
-                href="#"
+                href="#featured-products"
                 className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-700 shadow hover:text-blue-500 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
               >
                 EXPLORE
