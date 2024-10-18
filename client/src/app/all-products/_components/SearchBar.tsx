@@ -5,6 +5,7 @@ interface SearchBarProps {
   setSearchQuery: (query: string) => void;
   selectedCategory: string;
   setSelectedCategory: (category: string) => void;
+  categories: string[]; //array of categories that I render
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -28,7 +29,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
         className="p-2 border border-gray-300 rounded-md w-full"
-      ></select>
+      >
+        <option value="">All Categories</option>
+        {}
+      </select>
     </div>
   );
 };

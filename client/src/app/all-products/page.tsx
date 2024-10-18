@@ -4,11 +4,14 @@ import ProductList from '../_Components/ProductList'; // Assuming ProductList is
 import { getLatestProducts, StrapiResponse } from '../_utils/productsAPI';
 import { AxiosResponse } from 'axios';
 import { Product } from '../_utils/productsAPI';
+import SearchBar from './_components/SearchBar';
 
 export default function AllProductsPage() {
   const [productList, setProductList] = useState<Product[]>([]);
   const [visibleProducts, setVisibleProducts] = useState<Product[]>([]);
   const [loadCount, setLoadCount] = useState(2); // Start by loading 10 products at a time
+  const [searchQuery, setSearchQuery] = useState(''); //search input
+  const [selectedCategory, setSelectedCategory] = useState(''); //category
 
   useEffect(() => {
     fetchAllProducts();
@@ -29,6 +32,17 @@ export default function AllProductsPage() {
     }
   };
 
+  //Filter products based on SearchBar
+  const filteredProducts = productList.filter((product) => {
+    return (
+      product.attributes.title
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) &&
+      (selectedCategory === '' ||
+        product.attributes.category === selectedCategory)
+    );
+  });
+
   const loadMoreProducts = () => {
     const newVisibleCount = visibleProducts.length + 2;
     setVisibleProducts(productList.slice(0, newVisibleCount));
@@ -40,6 +54,14 @@ export default function AllProductsPage() {
 
   return (
     <div className="px-10 md:px-20 pt-10">
+      {/* Search Bar */}
+      <SearchBar
+        searchQuery={searchQuery}
+        selectedCategory={selectedCategory}
+        setSearchQuery={setSearchQuery}
+        setSelectedCategory={setSelectedCategory}
+      />
+
       {/* All products section */}
       <h1 className="text-3xl font-bold text-black my-4">All Products</h1>
       <ProductList productList={visibleProducts} />
