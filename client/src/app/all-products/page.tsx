@@ -34,7 +34,7 @@ export default function AllProductsPage() {
         new Set(res.data.data.map((product) => product.attributes.category)),
       );
       //  setCategories(uniqueCategories);
-      console.log(uniqueCategories);
+      //   console.log(uniqueCategories);
       setCategories(uniqueCategories);
     } catch (err) {
       console.error(err);

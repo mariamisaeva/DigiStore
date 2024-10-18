@@ -16,20 +16,26 @@ const SearchBar: React.FC<SearchBarProps> = ({
   categories,
 }) => {
   return (
-    <div className="mb-6">
+    <div className="mb-6 flex item-center space-x-2">
       <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search Products..."
-        className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+        // className=" p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+        className="w-full p-2 border border-blue-400 rounded-l-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+        style={{
+          borderRight: 'none',
+          borderRadius: '4px 0 0 4px',
+          boxShadow: 'none',
+        }}
       />
 
       <select
         title="Search By Category"
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
-        className="p-2 border border-gray-300 rounded-md w-full"
+        className="p-2 border border-gray-300 rounded-md "
       >
         <option value="">All Categories</option>
         {categories.map((cat, index) => (
