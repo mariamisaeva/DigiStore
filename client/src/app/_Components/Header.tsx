@@ -93,11 +93,31 @@ function Header() {
             <nav aria-label="Global" className="hidden md:block">
               <ul className="flex items-center gap-6 text-sm">
                 <li>
+                  <Link
+                    className="text-gray-500 transition hover:text-gray-500/75"
+                    href="/"
+                  >
+                    HOME
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    className="text-gray-500 transition hover:text-gray-500/75"
+                    href="/all-products"
+                  >
+                    {' '}
+                    PRODUCTS{' '}
+                  </Link>
+                </li>
+
+                <li>
                   <a
                     className="text-gray-500 transition hover:text-gray-500/75"
                     href="#"
                   >
-                    About
+                    {' '}
+                    SERVICES{' '}
                   </a>
                 </li>
 
@@ -107,7 +127,7 @@ function Header() {
                     href="#"
                   >
                     {' '}
-                    Careers{' '}
+                    CONTACT US{' '}
                   </a>
                 </li>
 
@@ -117,30 +137,10 @@ function Header() {
                     href="#"
                   >
                     {' '}
-                    History{' '}
+                    ABOUT{' '}
                   </a>
                 </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Services{' '}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Projects{' '}
-                  </a>
-                </li>
-
+                {/* 
                 <li>
                   <a
                     className="text-gray-500 transition hover:text-gray-500/75"
@@ -149,7 +149,7 @@ function Header() {
                     {' '}
                     Blog{' '}
                   </a>
-                </li>
+                </li> */}
               </ul>
             </nav>
 
@@ -192,7 +192,7 @@ function Header() {
                 </div>
               )}
 
-              <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
+              {/* <button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
                 <span className="sr-only">Toggle menu</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +208,7 @@ function Header() {
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

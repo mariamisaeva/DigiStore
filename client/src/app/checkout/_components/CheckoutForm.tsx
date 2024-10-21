@@ -116,14 +116,46 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   };
 
   const send_email = async () => {
+    const userEmail = user?.primaryEmailAddress?.emailAddress || '';
+
+    const username = user?.firstName || user?.fullName || 'Customer';
+    console.log('USERNAME: ', username);
+    const purchasedProducts = cart.map((item) => {
+      console.log('ITEMS: ', item);
+      console.log(
+        ' item.product.attributes.files.data: ',
+        item.product.attributes.files.data,
+      );
+      const files = item.product.attributes.files.data;
+      const fileUrls = files.map((file: any) => file.attributes.url);
+
+      console.log(fileUrls);
+
+      return {
+        //   id: item.product.id,
+        //   quantity: item.quantity,
+        //   description: item.product.attributes.description,
+        //   image: item.product.attributes.image,
+        //   category: item.product.attributes.category,
+        title: item.product.attributes.title,
+        price: item.product.attributes.price,
+        downloadUrl: fileUrls,
+      };
+    });
+
+    console.log('PURCHASED_PRODUCTS: ', purchasedProducts);
+
     const res = await fetch('/api/send', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      //   body: JSON.stringify({
-      //     amount: amount,
-      //   }),
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      body: JSON.stringify({
+        amount: amount / 100,
+        email: userEmail,
+        username,
+        products: purchasedProducts, //I want to have here the purchased products
+      }),
     });
   };
 
@@ -139,3 +171,63 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 };
 
 export default CheckoutForm;
+
+//=====================================
+// item.product.attributes.files.data:
+
+// [
+
+//   {
+
+//     id: 3,
+
+//     attributes: {
+
+//       name: '2020_Book_TheFutureOfSoftwareQualityAssu.pdf',
+
+//       alternativeText: null,
+
+//       caption: null,
+
+//       width: null,
+
+//       height: null,
+
+//       formats: null,
+
+//       hash: '2020_Book_The_Future_Of_Software_Quality_Assu_abab23193e',
+
+//       ext: '.pdf',
+
+//       mime: 'application/pdf',
+
+//       size: 5752.59,
+
+//       url:
+
+//         'https://res.cloudinary.com/dm4vls99s/image/upload/v1724851785/2020_Book_The_Future_Of_Software_Quality_Assu_abab23193e.pdf',
+
+//       previewUrl: null,
+
+//       provider: 'cloudinary',
+
+//       provider_metadata: { public_id: '2020_Book_The_Future_Of_Software_Quality_Assu_abab23193e', resource_type: 'image' },
+
+//       createdAt: '2024-08-28T13:29:46.019Z',
+
+//       updatedAt: '2024-08-28T13:29:46.019Z'
+
+//     }
+
+//   }
+
+// ]
+
+//==============
+// fileUrls:
+
+// [
+
+//   'https://res.cloudinary.com/dm4vls99s/image/upload/v1724851785/2020_Book_The_Future_Of_Software_Quality_Assu_abab23193e.pdf'
+
+// ]
