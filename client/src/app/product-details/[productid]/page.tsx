@@ -17,17 +17,15 @@ import { usePathname } from 'next/navigation';
 function DetailsPage(/*{ params }: any*/) {
   //   const path: any = usePathname();
   const router = useRouter();
+  const { productId } = router.query;
 
   const [productDetails, setProductDetails] = useState<Product | null>(null);
-
   const [similarProductList, setSimilarProductList] = useState<
     Product[] | null
   >(null);
 
   useEffect(() => {
     if (!router.isReady) return; //if router is fully mounted and ready
-
-    const { productId } = router.query; //now access productId safely
 
     if (!productId || Array.isArray(productId)) {
       console.error('Invalid Product ID!');
@@ -52,7 +50,7 @@ function DetailsPage(/*{ params }: any*/) {
     }
 
     fetchProductById();
-  }, [productId, router.isReady]);
+  }, [router.isReady, productId]);
 
   useEffect(() => {
     if (productDetails) {
