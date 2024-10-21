@@ -7,23 +7,21 @@ module.exports = [
             contentSecurityPolicy: {
                 useDefaults: true,
                 directives: {
-                    'connect-src': ["'self'", 'https:', process.env.FRONTEND_URL], //tp link with the frontend
-                    'img-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io', 'res.cloudinary.com'],
-                    'media-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io', 'res.cloudinary.com'],
-                    upgradeInsecureRequests: null,
+                    'connect-src': ["'self'", 'https:', process.env.FRONTEND_URL],
+                    'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+                    'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
                 },
             },
         },
     },
-    {//====
+    {
         name: 'strapi::cors',
         config: {
             enabled: true,
-            origin: [process.env.FRONTEND_URL], // Allow your Vercel frontend to make requests
+            origin: [process.env.FRONTEND_URL],
             methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD'],
-            headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
         },
-    },//========
+    },
     'strapi::poweredBy',
     'strapi::query',
     'strapi::body',
