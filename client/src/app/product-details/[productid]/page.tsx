@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import {
   getProductById,
   Product,
@@ -14,33 +13,23 @@ import { AxiosResponse } from 'axios';
 import ProductList from '../../_Components/ProductList';
 import { usePathname } from 'next/navigation';
 
-function DetailsPage(/*{ params }: any*/) {
-  //   const path: any = usePathname();
-  const router = useRouter();
-  const { productId } = router.query;
-
+function DetailsPage({ params }: any) {
+  const path: any = usePathname();
   const [productDetails, setProductDetails] = useState<Product | null>(null);
+
   const [similarProductList, setSimilarProductList] = useState<
     Product[] | null
   >(null);
 
   useEffect(() => {
-    if (!router.isReady) return; //if router is fully mounted and ready
-
-    if (!productId || Array.isArray(productId)) {
-      console.error('Invalid Product ID!');
-      return;
-    }
-
     async function fetchProductById() {
-      //   if (!productId) {
-      //     /*params?.*/
-      //     console.error('Product ID is undefined!');
-      //     return;
-      //   }
+      if (!params?.productId) {
+        console.error('Product ID is undefined!');
+        return;
+      }
 
       try {
-        const res = await getProductById(Number(productId)); //params?.productId
+        const res = await getProductById(params?.productId);
         // console.log(res.data.data);
         setProductDetails(res.data.data);
         // getProductByCategory(res.data.data); //func call
@@ -50,7 +39,7 @@ function DetailsPage(/*{ params }: any*/) {
     }
 
     fetchProductById();
-  }, [router.isReady, productId]);
+  }, [params?.productId]);
 
   useEffect(() => {
     if (productDetails) {
@@ -71,7 +60,7 @@ function DetailsPage(/*{ params }: any*/) {
 
   return (
     <div className="text-black px-10 py-8 md:px-28">
-      <SmallNavbar path={usePathname()} />
+      <SmallNavbar path={path} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 flex-col mt-10 justify-around gap-5 sm:gap:0">
         {productDetails ? (
