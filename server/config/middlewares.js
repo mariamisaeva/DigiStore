@@ -21,9 +21,9 @@ module.exports = [
             enabled: true,
             origin: [process.env.FRONTEND_URL], // Allow your Vercel frontend to make requests
             methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD'],
+            headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
         },
     },//========
-    'strapi::cors',
     'strapi::poweredBy',
     'strapi::query',
     'strapi::body',
