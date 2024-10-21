@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import {
   getProductById,
   Product,
@@ -13,8 +14,10 @@ import { AxiosResponse } from 'axios';
 import ProductList from '../../_Components/ProductList';
 import { usePathname } from 'next/navigation';
 
-function DetailsPage({ params }: any) {
-  const path: any = usePathname();
+function DetailsPage(/*{ params }: any*/) {
+  //   const path: any = usePathname();
+  const router = useRouter();
+  const { productId } = router.query;
   const [productDetails, setProductDetails] = useState<Product | null>(null);
 
   const [similarProductList, setSimilarProductList] = useState<
@@ -23,13 +26,14 @@ function DetailsPage({ params }: any) {
 
   useEffect(() => {
     async function fetchProductById() {
-      if (!params?.productId) {
+      if (!productId) {
+        /*params?.*/
         console.error('Product ID is undefined!');
         return;
       }
 
       try {
-        const res = await getProductById(params?.productId);
+        const res = await getProductById(Number(productId)); //params?.productId
         // console.log(res.data.data);
         setProductDetails(res.data.data);
         // getProductByCategory(res.data.data); //func call
@@ -39,7 +43,7 @@ function DetailsPage({ params }: any) {
     }
 
     fetchProductById();
-  }, [params?.productId]);
+  }, [productId]);
 
   useEffect(() => {
     if (productDetails) {
@@ -60,7 +64,7 @@ function DetailsPage({ params }: any) {
 
   return (
     <div className="text-black px-10 py-8 md:px-28">
-      <SmallNavbar path={path} />
+      <SmallNavbar path={usePathname()} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 flex-col mt-10 justify-around gap-5 sm:gap:0">
         {productDetails ? (
