@@ -18,7 +18,7 @@ module.exports = [
         name: 'strapi::cors',
         config: {
             enabled: true,
-            origin: ['https://digi-store-alpha.vercel.app'], //Vercel frontend domain here
+            origin: [process.env.FRONTEND_URL], //Vercel frontend domain
             methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD'],
             headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
         },
