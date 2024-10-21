@@ -25,12 +25,20 @@ function DetailsPage(/*{ params }: any*/) {
   >(null);
 
   useEffect(() => {
+    if (!router.isReady) return; //if router is fully mounted and ready
+
+    const { productId } = router.query; //now access productId safely
+    if (!productId || Array.isArray(productId)) {
+      console.error('Invalid Product ID!');
+      return;
+    }
+
     async function fetchProductById() {
-      if (!productId) {
-        /*params?.*/
-        console.error('Product ID is undefined!');
-        return;
-      }
+      //   if (!productId) {
+      //     /*params?.*/
+      //     console.error('Product ID is undefined!');
+      //     return;
+      //   }
 
       try {
         const res = await getProductById(Number(productId)); //params?.productId
@@ -43,7 +51,7 @@ function DetailsPage(/*{ params }: any*/) {
     }
 
     fetchProductById();
-  }, [productId]);
+  }, [productId, router.isReady]);
 
   useEffect(() => {
     if (productDetails) {
