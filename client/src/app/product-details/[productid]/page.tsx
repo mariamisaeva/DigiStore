@@ -25,13 +25,15 @@ function DetailsPage({ params }: any) {
 
   useEffect(() => {
     async function fetchProductById() {
-      if (!params?.productId) {
+      const productId = params?.productId;
+      console.log('PRODUCTID: ', productId);
+      if (!productId) {
         console.error('Product ID is undefined!');
         return;
       }
 
       try {
-        const res = await getProductById(params?.productId);
+        const res = await getProductById(productId);
         // console.log(res.data.data);
         setProductDetails(res.data.data);
         // getProductByCategory(res.data.data); //func call

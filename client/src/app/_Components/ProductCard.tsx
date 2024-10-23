@@ -7,7 +7,7 @@ import Link from 'next/link';
 export interface ProductCardProps {
   //   product: Product;
   product: {
-    id: string;
+    id: number;
     attributes: {
       title: string;
       category: string;

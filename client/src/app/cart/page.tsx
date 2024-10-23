@@ -17,7 +17,7 @@ function CartPage() {
     return Number(total.toFixed(2));
   };
 
-  const deleteItem = async (id: any) => {
+  const deleteItem = async (id: number) => {
     // console.log('ID: ', id);
     try {
       const res = await deleteCartItem(id);
