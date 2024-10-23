@@ -32,9 +32,9 @@ function DetailsPage({ params }: { params: paramsType }) {
 
   useEffect(() => {
     async function fetchProductById() {
-      console.log('PRODUCT_ID: ', productId);
-      console.log('PARAMS.PRODUCTID: ', params.productid);
-      console.log('PARAMS: ', params);
+      //   console.log('PRODUCT_ID: ', productId);
+      //   console.log('PARAMS.PRODUCTID: ', params.productid);
+      //   console.log('PARAMS: ', params);
 
       if (!productId) {
         console.error('Product ID is undefined!');
