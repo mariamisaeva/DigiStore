@@ -14,7 +14,7 @@ import ProductList from '../../_Components/ProductList';
 import { usePathname } from 'next/navigation';
 
 type paramsType = {
-  productId: number;
+  productid: string;
 };
 
 function DetailsPage({ params }: { params: paramsType }) {
@@ -25,12 +25,17 @@ function DetailsPage({ params }: { params: paramsType }) {
     Product[] | null
   >(null);
 
-  console.log('Params: ', params);
-  let productId = params?.productId;
-  productId = Number(productId);
+  //   console.log('Params: ', params);
+  //   let productId = params?.productId;
+  //   productId = Number(productId);
+  const productId = Number(params?.productid);
 
   useEffect(() => {
     async function fetchProductById() {
+      console.log('PRODUCT_ID: ', productId);
+      console.log('PARAMS.PRODUCTID: ', params.productid);
+      console.log('PARAMS: ', params);
+
       if (!productId) {
         console.error('Product ID is undefined!');
         return;
