@@ -13,11 +13,11 @@ import { AxiosResponse } from 'axios';
 import ProductList from '../../_Components/ProductList';
 import { usePathname } from 'next/navigation';
 
-type params = {
-  productId: string;
+type paramsType = {
+  productId: number;
 };
 
-function DetailsPage({ params }: { params: params }) {
+function DetailsPage({ params }: { params: paramsType }) {
   const path: any = usePathname();
   const [productDetails, setProductDetails] = useState<Product | null>(null);
 
@@ -26,18 +26,15 @@ function DetailsPage({ params }: { params: params }) {
   >(null);
 
   console.log('Params: ', params);
+  let productId = params?.productId;
+  productId = Number(productId);
 
   useEffect(() => {
     async function fetchProductById() {
-      let productId = params?.productId;
-
-      console.log('PRODUCTID: ', productId);
       if (!productId) {
         console.error('Product ID is undefined!');
         return;
       }
-
-      //   productId = Number(productId);
 
       try {
         const res = await getProductById(productId);
@@ -50,7 +47,7 @@ function DetailsPage({ params }: { params: params }) {
     }
 
     fetchProductById();
-  }, [params?.productId]);
+  }, [productId]);
 
   useEffect(() => {
     if (productDetails) {

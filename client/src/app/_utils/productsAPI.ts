@@ -2,7 +2,7 @@ import axiosClient from './axiosInstance';
 import { AxiosResponse } from 'axios';
 
 export interface Product {
-  id: string;
+  id: number;
   attributes: {
     title: string;
     description: string;
@@ -32,7 +32,7 @@ const getLatestProducts = (): Promise<
   return axiosClient.get('/products?populate=*');
 };
 
-const getProductById = (id: string) => {
+const getProductById = (id: number) => {
   return axiosClient.get(`/products/${id}?populate=*`);
 };
 
