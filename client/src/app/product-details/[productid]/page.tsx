@@ -21,6 +21,8 @@ function DetailsPage({ params }: any) {
     Product[] | null
   >(null);
 
+  console.log('Params: ', params);
+
   useEffect(() => {
     async function fetchProductById() {
       if (!params?.productId) {
