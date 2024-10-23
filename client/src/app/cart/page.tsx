@@ -11,7 +11,7 @@ function CartPage() {
 
   const getTotal = () => {
     let total = cart.reduce(
-      (acc, item) => acc + Number(item.product.attributes.price),
+      (acc, item) => acc + Number(item?.product?.attributes?.price),
       0,
     );
     return Number(total.toFixed(2));
