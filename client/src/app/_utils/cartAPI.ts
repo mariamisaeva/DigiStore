@@ -19,7 +19,7 @@ export interface cartPayload {
   data: {
     username: string;
     email: string;
-    products: string[]; //string or number
+    products: number[]; //string or number
   };
 }
 
