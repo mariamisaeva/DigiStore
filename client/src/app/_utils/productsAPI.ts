@@ -32,7 +32,7 @@ const getLatestProducts = (): Promise<
   return axiosClient.get('/products?populate=*');
 };
 
-const getProductById = (id: Number) => {
+const getProductById = (id: string) => {
   return axiosClient.get(`/products/${id}?populate=*`);
 };
 
