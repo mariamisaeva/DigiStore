@@ -129,12 +129,12 @@ function Cart() {
             Checkout
           </a>
 
-          <a
-            href="#"
+          <Link
+            href="/all-products"
             className="inline-block text-sm text-gray-500 underline underline-offset-4 transition hover:text-gray-600"
           >
             Continue shopping
-          </a>
+          </Link>
         </div>
       </div>
       Cart
