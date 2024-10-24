@@ -30,7 +30,7 @@ const getLatestProducts = (): Promise<
   AxiosResponse<StrapiResponse<Product[]>>
 > => {
   return axiosClient.get(
-    '/products?fields[0]=title&fields[1]=price&populate[image][fields][0]=url',
+    '/products?fields[0]=title&fields[1]=price&fields[2]=category&populate[image][fields][0]=url',
   );
 };
 
