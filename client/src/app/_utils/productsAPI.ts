@@ -29,7 +29,9 @@ export interface StrapiResponse<T> {
 const getLatestProducts = (): Promise<
   AxiosResponse<StrapiResponse<Product[]>>
 > => {
-  return axiosClient.get('/products?populate=*');
+  return axiosClient.get(
+    '/products?fields[0]=title&fields[1]=price&populate[image][fields][0]=url',
+  );
 };
 
 const getProductById = (id: number) => {

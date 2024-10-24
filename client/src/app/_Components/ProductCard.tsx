@@ -27,7 +27,8 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/product-details/${product?.id}`}
-      className="p-1 hover:border hover:shadow-md rounded-lg border-blue-200"
+      className="flex flex-col hover:border hover:shadow-md rounded-lg border-blue-200 bg-white"
+      //   "p-1 hover:border hover:shadow-md rounded-lg border-blue-200"
     >
       {/* <div key={product.id}>{product?.attributes.title}</div> */}
       <Image
@@ -39,7 +40,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       />
       {/*rounded from the top only, fix the extra height and make the pics fit the predefined size*/}
 
-      <div className="flex justify-between p-3 items-center bg-gray-100 rounded-t-lg">
+      <div className="flex flex-col justify-between p-3 space-y-2 bg-gray-100 rounded-b-lg">
+        {/*  "flex justify-between p-3 items-center bg-gray-100 rounded-t-lg" */}
         {/*padding=3 */}
         <div>
           <h2 className="text-black text-[16px] font-medium line-clamp-1">
@@ -51,9 +53,11 @@ export default function ProductCard({ product }: ProductCardProps) {
             {product?.attributes?.category}
           </h2>
         </div>
+        {/* <div className="flex justify-between items-center"> */}
         <h2 className="text-green-600 font-bold">
           ${product?.attributes?.price}
         </h2>
+        {/* </div> */}
       </div>
     </Link>
   );

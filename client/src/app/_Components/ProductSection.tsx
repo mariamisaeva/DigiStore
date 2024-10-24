@@ -35,16 +35,19 @@ export default function ProductSection() {
   };
 
   return (
-    <div className="px-10 md:px-20 pt-10">
+    <div className="px-6 sm:px-10 md:px-20 py-10">
       {/*Featured products section*/}
-      <h1 id="featured-products" className="text-3xl font-bold text-black my-4">
+      <h1
+        id="featured-products"
+        className="text-2xl md:text-3xl font-bold text-black my-4"
+      >
         Featured Products
       </h1>
       <ProductList productList={featuredProducts} />
 
       {/*All products section*/}
-      <h1 className="text-3xl font-bold text-black my-4">All Products</h1>
-      <ProductList productList={productList} />
+      {/* <h1 className="text-3xl font-bold text-black my-4">All Products</h1>
+      <ProductList productList={productList} /> */}
     </div>
   );
 }
