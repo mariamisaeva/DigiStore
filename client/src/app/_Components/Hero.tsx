@@ -14,15 +14,15 @@ function Hero() {
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-1">
           <div className="max-w-xl text-left ltr:sm:text-left rtl:sm:text-right">
-            <h1 className="text-3xl font-extrabold text-white sm:text-5xl">
+            <h1 className="text-3xl font-extrabold text-blue-500 sm:text-5xl">
               Unlock Your Potential
-              <strong className="block font-extrabold text-[#6EACDA]">
+              <strong className="block font-extrabold text-[#001d88]">
                 {' '}
                 With Top-Quality Products & Courses{' '}
               </strong>
             </h1>
 
-            <p className="mt-4 max-w-lg text-white sm:text-xl/relaxed">
+            <p className="mt-4 max-w-lg text-blue-500 sm:text-xl/relaxed">
               Discover expertly curated products and online courses designed to
               elevate your skills, boost your productivity, and transform your
               life. Start your journey to success today!
@@ -31,14 +31,14 @@ function Hero() {
             <div className="mt-8 flex flex-wrap gap-4 text-center">
               <a
                 href="/all-products"
-                className="block w-full rounded bg-blue-700 px-12 py-3 text-sm font-medium text-white shadow hover:bg-[#6EACDA]  focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+                className="block w-full rounded bg-[#001d88] px-12 py-3 text-sm font-medium text-white shadow hover:bg-[#6EACDA]  focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
               >
                 SHOP NOW
               </a>
 
               <a
                 href="#featured-products"
-                className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-700 shadow hover:text-blue-500 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+                className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-[#001d88] shadow hover:text-blue-500 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
               >
                 EXPLORE
               </a>

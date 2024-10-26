@@ -10,7 +10,7 @@ function Footer() {
   const [showFooter, setShowFooter] = useState(true);
 
   useEffect(() => {
-    const hideFooterRoutes = ['/sign-in', 'sign-up'];
+    const hideFooterRoutes = ['/sign-in', '/sign-up'];
 
     const shouldHideFooter = hideFooterRoutes.some((route) =>
       pathname.includes(route),
@@ -65,8 +65,9 @@ function Footer() {
             </div>
 
             <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-              consequuntur amet culpa cum itaque neque.
+              Discover expertly curated products and online courses designed to
+              elevate your skills, boost your productivity, and transform your
+              life. Start your journey to success today!
             </p>
           </div>
 

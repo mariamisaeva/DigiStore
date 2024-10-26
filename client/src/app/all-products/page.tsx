@@ -80,7 +80,7 @@ export default function AllProductsPage() {
       {visibleProducts.length < productList.length && (
         <button
           onClick={handleLoadMore}
-          className="mt-4 p-2 bg-blue-500 text-white rounded-lg"
+          className="w-full p-3 text-gray-500 rounded-lg transition duration-200 bg-transparent hover:shadow-md"
         >
           Load More
         </button>
