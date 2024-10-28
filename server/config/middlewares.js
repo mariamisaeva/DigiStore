@@ -7,7 +7,7 @@ module.exports = [
             contentSecurityPolicy: {
                 useDefaults: true,
                 directives: {
-                    'connect-src': ["'self'", 'https:', 'http://localhost:3000', process.env.FRONTEND_URL],
+                    'connect-src': ["'self'", 'https:', 'https://digi-store-alpha.vercel.app', 'http://localhost:3000'],
                     'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
                     'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
                 },
@@ -18,7 +18,7 @@ module.exports = [
         name: 'strapi::cors',
         config: {
             enabled: true,
-            origin: ['http://localhost:3000', process.env.FRONTEND_URL], //Vercel frontend domain
+            origin: ['https://digi-store-alpha.vercel.app', 'http://localhost:3000'], //Vercel frontend domain
             methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD'],
             headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
             keepHeadersOnError: true, //for debugging
