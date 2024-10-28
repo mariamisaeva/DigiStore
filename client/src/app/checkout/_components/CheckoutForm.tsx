@@ -127,7 +127,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         ' item.product.attributes.files.data: ',
         item?.product?.attributes?.files?.data,
       );
-      const files = item?.product?.attributes?.files?.data || [];
+      const files = item?.product?.attributes?.files?.data;
       const fileUrls = files.map((file: any) => file.attributes.url);
 
       console.log(fileUrls);
