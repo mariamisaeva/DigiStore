@@ -35,12 +35,16 @@ const getLatestProducts = (): Promise<
 };
 
 const getProductById = (id: number) => {
-  return axiosClient.get(`/products/${id}?populate=*`);
+  //   return axiosClient.get(`/products/${id}?populate=*`);
+  return axiosClient.get(
+    `/products/${id}?fields[0]=title&fields[1]=price&fields[2]=category&populate[image][fields][0]=url`,
+  );
 };
 
 const getProductByCategory = (category: string) => {
   return axiosClient.get(
-    `/products?filters[category][$eq]=${category}&populate=*`,
+    `/products?filters[category][$eq]=${category}&fields[0]=title&fields[1]=price&fields[2]=category&populate[image][fields][0]=url`,
+    // `/products?filters[category][$eq]=${category}&populate=*`,
   );
 };
 
