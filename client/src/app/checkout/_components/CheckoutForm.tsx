@@ -120,13 +120,14 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
     const username = user?.firstName || user?.fullName || 'Customer';
     console.log('USERNAME: ', username);
+
     const purchasedProducts = cart.map((item) => {
       console.log('ITEMS: ', item);
       console.log(
         ' item.product.attributes.files.data: ',
-        item.product.attributes.files.data,
+        item?.product?.attributes?.files?.data,
       );
-      const files = item.product.attributes.files.data;
+      const files = item?.product?.attributes?.files?.data || [];
       const fileUrls = files.map((file: any) => file.attributes.url);
 
       console.log(fileUrls);
