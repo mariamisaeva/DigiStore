@@ -173,6 +173,22 @@ In the Strapi backend configuration, ensure CORS settings allow requests from th
 - **SearchBar**: Allows users to search and filter products.
 - **Checkout**: Integrates Stripe for handling payments.
 
+---
+
+## Screenshots
+
+![Image1](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-2024-11-03-19_39_46.png)
+![Image2](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-all-products-2024-11-03-19_41_42.png)
+![Image3](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-product-details-1-2024-11-03-19_43_01.png)
+![Image4](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-sign-in-2024-11-03-19_40_35.png)
+![Image5](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-cart-2024-11-03-19_54_13.png)
+![Image6](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-product-details-6-2024-11-03-19_44_11.png)
+![Image7](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-cart-2024-11-03-19_44_47.png)
+![Image8](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-checkout-2024-11-03-19_45_08.png)
+![Image9](/client/public/Screenshots/screencapture-digi-store-alpha-vercel-app-payment-success-2024-11-03-19_45_32.png)
+
+---
+
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
