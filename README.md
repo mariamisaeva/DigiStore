@@ -162,10 +162,13 @@ In the Strapi backend configuration, ensure CORS settings allow requests from th
 
 ### API Endpoints (for Developer Reference)
 
-- `GET /api/products`: Retrieve all products with optional query filters
-- `GET /api/products/:id`: Retrieve product details by ID
-- `POST /api/orders`: Create a new order after payment completion
-- `POST /api/auth`: User login and registration with Clerk
+- `GET /api/products`: Retrieve all products with optional query filters.
+- `GET /api/products/:id`: Retrieve product details by ID.
+- `POST /api/orders`: Create a new order.after payment completion.
+- `POST /api/auth`: User login and registration with Clerk.
+- `POST /api/carts`: Add items to the cart.
+- `GET /api/carts`: Retrieve cart items for the current user.
+- `DELETE /api/carts/:id`: Remove an item from the cart.
 
 ### Frontend Components
 
