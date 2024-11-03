@@ -7,7 +7,7 @@ module.exports = [
             contentSecurityPolicy: {
                 useDefaults: true,
                 directives: {
-                    'connect-src': ["'self'", 'https:', 'https://digi-store-alpha.vercel.app', 'http://localhost:3000'],
+                    'connect-src': ["'self'", 'https:', 'https://digi-store-alpha.vercel.app', 'https://digistore-646t.onrender.com', 'http://localhost:3000'],
                     'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
                     'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
                 },
