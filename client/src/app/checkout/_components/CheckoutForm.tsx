@@ -77,7 +77,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       clientSecret,
       elements,
       confirmParams: {
-        return_url: `${process.env.LIVE_URL}/payment-success`, //successUrl, //'http://localhost:3000/payment-success',
+        return_url: 'https://digi-store-alpha.vercel.app/payment-success', //successUrl, //'http://localhost:3000/payment-success',
       },
     });
 
