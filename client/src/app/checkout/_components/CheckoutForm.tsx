@@ -68,16 +68,16 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
     const { client_secret: clientSecret } = await res.json();
 
-    const successUrl =
-      process.env.NODE_ENV === 'production'
-        ? `${process.env.LIVE_URL}/payment-success`
-        : 'http://localhost:3000/payment-success';
+    // const successUrl =
+    //   process.env.NODE_ENV === 'production'
+    //     ? `${process.env.LIVE_URL}/payment-success`
+    //     : 'http://localhost:3000/payment-success';
 
     const result = await stripe.confirmPayment({
       clientSecret,
       elements,
       confirmParams: {
-        return_url: successUrl, //'http://localhost:3000/payment-success',
+        return_url: 'https://digi-store-alpha.vercel.app/payment-success', //successUrl, //'http://localhost:3000/payment-success',
       },
     });
 
