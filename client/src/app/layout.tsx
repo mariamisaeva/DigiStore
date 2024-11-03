@@ -26,7 +26,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-//   const [cart, setCart] = useState<any[]>([]);
+  //   const [cart, setCart] = useState<any[]>([]);
 
   return (
     <ClerkProvider

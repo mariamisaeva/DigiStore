@@ -12,6 +12,7 @@ import ProductInfo from './_components/ProductInfo';
 import { AxiosResponse } from 'axios';
 import ProductList from '../../_Components/ProductList';
 import { usePathname } from 'next/navigation';
+import SkeletonProductInfo from './_components/SkeletonProductInfo';
 
 type paramsType = {
   productid: string;
@@ -79,7 +80,7 @@ function DetailsPage({ params }: { params: paramsType }) {
         {productDetails ? (
           <ProductImage product={productDetails} />
         ) : (
-          <h4>Loading ... </h4>
+          <SkeletonProductInfo />
         )}
         {productDetails && <ProductInfo product={productDetails} />}
       </div>
