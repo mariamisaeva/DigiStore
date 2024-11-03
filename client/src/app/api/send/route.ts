@@ -11,7 +11,7 @@ export async function POST(req: Request) {
   try {
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev', //Add your domain if  you have
-      to: email,
+      to: [email],
       subject: 'Hello world',
       react: EmailTemplate({ body }),
     });
