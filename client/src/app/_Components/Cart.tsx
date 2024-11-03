@@ -137,7 +137,6 @@ function Cart() {
           </Link>
         </div>
       </div>
-      Cart
     </div>
   );
 }
