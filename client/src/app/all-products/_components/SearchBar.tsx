@@ -24,7 +24,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search Products..."
-          // className=" p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           className="w-full p-2 border border-blue-400 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 pr-10 text-black"
           style={{
             paddingRight: '40px',
