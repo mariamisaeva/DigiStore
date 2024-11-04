@@ -22,13 +22,8 @@ interface Product {
   // category:string;
   // image:string;
   // id:string;
-  // slug:string;
   // files:string[];
   // content:string;
-  // delivery:boolean;
-  // createdAt:string;
-  // updatedAt:string;
-  // publishedAt:string;
 }
 
 interface EmailTemplateProps {
@@ -44,7 +39,7 @@ interface EmailTemplateProps {
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   body,
 }) => {
-  console.log('BODY : ', body.products);
+  //   console.log('BODY : ', body.products);
   return (
     <div>
       <h1>
@@ -68,9 +63,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             <p>Files: {product.files}</p>
             <p>Content: {product.content}</p>
             <p>Delivery: {product.delivery}</p>
-            <p>CreatedAt: {product.createdAt}</p>
-            <p>UpdatedAt: {product.updatedAt}</p>
-            <p>PublishedAt: {product.publishedAt}</p> */}
+           */}
           </li>
         ))}
       </ul>
