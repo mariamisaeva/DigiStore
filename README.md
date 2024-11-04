@@ -200,3 +200,5 @@ Contributions are welcome! Please follow these steps:
 2. **Create a new branch** with a descriptive name.
 3. **Commit and push** your changes.
 4. **Open a pull request** for review.
+
+**Note:** This project currently uses a static email address for sending emails due to the lack of a custom domain setup.
