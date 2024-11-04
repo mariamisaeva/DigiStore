@@ -16,22 +16,12 @@ function ProductInfo({ product }: { product: Product }) {
   const router = useRouter();
 
   const { cart, setCart } = useCart();
-  //   const { session } = useSession();
-
-  //   console.log(user?.primaryEmailAddress?.emailAddress);
-  //   console.log(user?.fullName);
 
   const handleAddToCart = async () => {
     // console.log('add to cart');
     if (!user) {
       router.push('/sign-in');
     } else {
-      //the logic of adding the product to the cart
-
-      //   console.log('SESSION: ', session);
-      //   const token = await session?.getToken();
-      //   console.log('token: ', token);
-      //   console.log('PRODUCT ID', product?.id);
       const bodyData = {
         data: {
           username: user.fullName || '',
@@ -39,15 +29,10 @@ function ProductInfo({ product }: { product: Product }) {
           products: [product?.id],
         },
       };
-      //   console.log('data in handleAddToCart: ', data);
 
       try {
         const res = await addToCart(bodyData);
-        // console.log('RES: ', res);
-        // console.log(res.data.data);
         const responseData = res.data.data as any;
-        // console.log('Response: ', responseData.data.id);
-        // console.log('PRODUCTS:', product);
         setCart((prevCart) => [
           ...prevCart,
           {
