@@ -2,10 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useUser } from '@clerk/nextjs';
 
 function Footer() {
-  //   const { user } = useUser();
   const pathname = usePathname();
   const [showFooter, setShowFooter] = useState(true);
 
@@ -20,7 +18,6 @@ function Footer() {
   }, [pathname]);
 
   return (
-    // user
     showFooter && (
       <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">

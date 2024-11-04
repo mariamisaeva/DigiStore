@@ -23,7 +23,6 @@ function Header() {
     async (email: string) => {
       try {
         const res = await getCartPerUser(email);
-        // console.log('Cart Response: ', res?.data?.data); //AN ARRAY
         res?.data?.data.forEach((item: CartItem) => {
           setCart((prevCart) => [
             ...prevCart,
@@ -40,18 +39,7 @@ function Header() {
     [setCart],
   );
 
-  //   const getUserCart = async () => {
-  //     const email = user?.primaryEmailAddress?.emailAddress || '';
-  //     try {
-  //       const res = await getCartPerUser(email);
-  //       console.log('Cart Response: ', res);
-  //     } catch (err) {
-  //       console.error('ERROR: ', err);
-  //     }
-  //   };
-
   useEffect(() => {
-    // const path = typeof window !== 'undefined' ? window.location.pathname : '';
     const hideHeaderRoutes = ['/sign-in', '/sign-up'];
 
     const shouldHideHeader = hideHeaderRoutes.some((route) =>
@@ -63,17 +51,10 @@ function Header() {
 
   useEffect(() => {
     const email = user?.primaryEmailAddress?.emailAddress || '';
-    // user && fetchUserCart(email);
     if (user) {
       fetchUserCart(email);
     }
   }, [user, fetchUserCart]);
-
-  //   console.log(window.location.href);
-  //   const [loggedIn, setLoggedIn] = useState(false);
-  //   useEffect(() => {
-  //     setLoggedIn(window.location.href.toString().includes('sign-in'));
-  //   }, []);
 
   return (
     showHeader && (
@@ -140,16 +121,6 @@ function Header() {
                     ABOUT{' '}
                   </a>
                 </li>
-                {/* 
-                <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Blog{' '}
-                  </a>
-                </li> */}
               </ul>
             </nav>
 

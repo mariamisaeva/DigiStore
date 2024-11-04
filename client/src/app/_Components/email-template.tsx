@@ -44,7 +44,6 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
       <h1>
         Welcome,{body.username} {/*body.username.firstName*/}!
       </h1>
-      {/* <h2>Body: {body}</h2> */}
       <h2>Amount: ${body.amount}</h2>
 
       <ul>
@@ -58,10 +57,8 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
             <p>Category: {product.category}</p>
             <p>Image: {product.image}</p>
             <p>Id: {product.id}</p>
-            <p>Slug: {product.slug}</p>
             <p>Files: {product.files}</p>
             <p>Content: {product.content}</p>
-            <p>Delivery: {product.delivery}</p>
            */}
           </li>
         ))}
