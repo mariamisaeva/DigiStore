@@ -39,7 +39,6 @@ interface EmailTemplateProps {
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   body,
 }) => {
-  //   console.log('BODY : ', body.products);
   return (
     <div>
       <h1>
