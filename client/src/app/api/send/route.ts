@@ -6,18 +6,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const { email } = body;
-
-  if (!email) {
-    return new Response(JSON.stringify({ error: 'Email is required' }), {
-      status: 400,
-    });
-  }
-
   try {
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev', //Add your domain if  you have
-      to: [email],
+      to: ['mariam.hammad8@gmail.com'],
       subject: 'Hello world',
       react: EmailTemplate({ body }),
     });
