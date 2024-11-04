@@ -1,11 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { TbCategoryFilled } from 'react-icons/tb';
-// import { Product } from '../_utils/productsAPI';
 import Link from 'next/link';
 
 export interface ProductCardProps {
-  //   product: Product;
   product: {
     id: number;
     attributes: {
@@ -23,14 +21,11 @@ export interface ProductCardProps {
   };
 }
 export default function ProductCard({ product }: ProductCardProps) {
-  //   console.log('Product ID:', product.id);
   return (
     <Link
       href={`/product-details/${product?.id}`}
       className="flex flex-col hover:border hover:shadow-md rounded-lg border-blue-200 bg-white"
-      //   "p-1 hover:border hover:shadow-md rounded-lg border-blue-200"
     >
-      {/* <div key={product.id}>{product?.attributes.title}</div> */}
       <Image
         src={product?.attributes?.image?.data?.attributes?.url}
         alt={product.attributes.title}
@@ -38,11 +33,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         height={300}
         className="rounded-t-lg h-[170px] object-cover"
       />
-      {/*rounded from the top only, fix the extra height and make the pics fit the predefined size*/}
 
       <div className="flex flex-col justify-between p-3 space-y-2 bg-gray-100 rounded-b-lg">
-        {/*  "flex justify-between p-3 items-center bg-gray-100 rounded-t-lg" */}
-        {/*padding=3 */}
         <div>
           <h2 className="text-black text-[16px] font-medium line-clamp-1">
             {/*cut into 1 line only*/}
