@@ -33,8 +33,6 @@ export default function AllProductsPage() {
       const uniqueCategories = Array.from(
         new Set(res.data.data.map((product) => product.attributes.category)),
       );
-      //  setCategories(uniqueCategories);
-      //   console.log(uniqueCategories);
       setCategories(uniqueCategories);
     } catch (err) {
       console.error(err);
@@ -74,7 +72,6 @@ export default function AllProductsPage() {
 
       {/* All products section */}
       <h1 className="text-3xl font-bold text-black my-4">All Products</h1>
-      {/* <ProductList productList={visibleProducts} /> */}
       <ProductList productList={filteredProducts.slice(0, loadCount)} />
 
       {visibleProducts.length < productList.length && (
