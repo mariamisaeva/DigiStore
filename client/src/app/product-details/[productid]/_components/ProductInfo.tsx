@@ -1,4 +1,4 @@
-`use client`;
+'use client';
 import React, { useContext } from 'react';
 import { Product } from '../../../_utils/productsAPI';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
