@@ -24,6 +24,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/product-details/${product?.id}`}
+      prefetch
       className="flex flex-col hover:border hover:shadow-md rounded-lg border-blue-200 bg-white"
     >
       <Image
